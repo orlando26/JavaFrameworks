@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap12.extensions.wsdl.ibm.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap12.extensions.wsdl.ibm.com" xmlns:intf="http://soap12.extensions.wsdl.ibm.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap12.extensions.wsdl.ibm.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getRequired">
+    <complexType/>
+   </element>
+   <element name="getRequiredResponse">
+    <complexType>
+     <sequence>
+      <element name="getRequiredReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getElementType">
+    <complexType/>
+   </element>
+   <element name="getElementTypeResponse">
+    <complexType>
+     <sequence>
+      <element name="getElementTypeReturn" type="xsd:QName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="toString">
+    <complexType/>
+   </element>
+   <element name="toStringResponse">
+    <complexType>
+     <sequence>
+      <element name="toStringReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStyle">
+    <complexType/>
+   </element>
+   <element name="getStyleResponse">
+    <complexType>
+     <sequence>
+      <element name="getStyleReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStyle">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setStyleResponse">
+    <complexType/>
+   </element>
+   <element name="setRequired">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setRequiredResponse">
+    <complexType/>
+   </element>
+   <element name="setElementType">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:QName"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setElementTypeResponse">
+    <complexType/>
+   </element>
+   <element name="getTransportURI">
+    <complexType/>
+   </element>
+   <element name="getTransportURIResponse">
+    <complexType>
+     <sequence>
+      <element name="getTransportURIReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTransportURI">
+    <complexType>
+     <sequence>
+      <element name="in0" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setTransportURIResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="setTransportURIRequest">
+
+      <wsdl:part element="impl:setTransportURI" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequiredResponse">
+
+      <wsdl:part element="impl:getRequiredResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringResponse">
+
+      <wsdl:part element="impl:toStringResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStyleRequest">
+
+      <wsdl:part element="impl:setStyle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRequiredRequest">
+
+      <wsdl:part element="impl:setRequired" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStyleResponse">
+
+      <wsdl:part element="impl:getStyleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setRequiredResponse">
+
+      <wsdl:part element="impl:setRequiredResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setElementTypeResponse">
+
+      <wsdl:part element="impl:setElementTypeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStyleRequest">
+
+      <wsdl:part element="impl:getStyle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransportURIRequest">
+
+      <wsdl:part element="impl:getTransportURI" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getElementTypeResponse">
+
+      <wsdl:part element="impl:getElementTypeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRequiredRequest">
+
+      <wsdl:part element="impl:getRequired" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getElementTypeRequest">
+
+      <wsdl:part element="impl:getElementType" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setStyleResponse">
+
+      <wsdl:part element="impl:setStyleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="toStringRequest">
+
+      <wsdl:part element="impl:toString" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTransportURIResponse">
+
+      <wsdl:part element="impl:getTransportURIResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setElementTypeRequest">
+
+      <wsdl:part element="impl:setElementType" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setTransportURIResponse">
+
+      <wsdl:part element="impl:setTransportURIResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SOAP12BindingImpl">
+
+      <wsdl:operation name="getRequired">
+
+         <wsdl:input message="impl:getRequiredRequest" name="getRequiredRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getRequiredResponse" name="getRequiredResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getElementType">
+
+         <wsdl:input message="impl:getElementTypeRequest" name="getElementTypeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getElementTypeResponse" name="getElementTypeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdl:input message="impl:toStringRequest" name="toStringRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:toStringResponse" name="toStringResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStyle">
+
+         <wsdl:input message="impl:getStyleRequest" name="getStyleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStyleResponse" name="getStyleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStyle">
+
+         <wsdl:input message="impl:setStyleRequest" name="setStyleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setStyleResponse" name="setStyleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRequired">
+
+         <wsdl:input message="impl:setRequiredRequest" name="setRequiredRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setRequiredResponse" name="setRequiredResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setElementType">
+
+         <wsdl:input message="impl:setElementTypeRequest" name="setElementTypeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setElementTypeResponse" name="setElementTypeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransportURI">
+
+         <wsdl:input message="impl:getTransportURIRequest" name="getTransportURIRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTransportURIResponse" name="getTransportURIResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTransportURI">
+
+         <wsdl:input message="impl:setTransportURIRequest" name="setTransportURIRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setTransportURIResponse" name="setTransportURIResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SOAP12BindingImplSoapBinding" type="impl:SOAP12BindingImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getRequired">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRequiredRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRequiredResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getElementType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getElementTypeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getElementTypeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="toString">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="toStringRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="toStringResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStyle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStyleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStyleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setStyle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setStyleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setStyleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setRequired">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setRequiredRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setRequiredResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setElementType">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setElementTypeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setElementTypeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getTransportURI">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTransportURIRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTransportURIResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setTransportURI">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setTransportURIRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setTransportURIResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SOAP12BindingImplService">
+
+      <wsdl:port binding="impl:SOAP12BindingImplSoapBinding" name="SOAP12BindingImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/Jaxws-demo/services/SOAP12BindingImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
