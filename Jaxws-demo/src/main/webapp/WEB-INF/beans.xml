@@ -10,8 +10,11 @@
 	<jaxws:endpoint id="helloWorld" implementor="com.jaxws.ws.HelloWorldImpl"
 		address="/HelloWorld" />
 
-	<jaxws:endpoint id="retrieveUserService" implementor="com.jaxws.ws.RetrieveUserServiceImpl"
-		address="/RetrieveUserService" />
+	<jaxws:endpoint id="retrieveUserService"
+		implementor="com.jaxws.ws.RetrieveUserServiceImpl" address="/RetrieveUserService" />
+
+	<jaxws:endpoint id="createUserService"
+		implementor="com.jaxws.ws.CreateUserServiceImpl" address="/CreateUserService" />
 
 
 

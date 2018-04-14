@@ -17,6 +17,8 @@ public class UserDAOImpl implements UserDAO{
 	
 	private static final String FIND_BY_EMAIL = "FROM User where Email = :email";
 	
+	private static final String GET_ALL_USERS = "FROM User";
+	
 	@Override
 	public void insert(User user) {
 		HibernateSession.saveObject(user);
@@ -34,10 +36,36 @@ public class UserDAOImpl implements UserDAO{
 	}
 
 	@Override
+	public List<User> getAllUsers() {
+		Session session = HibernateSession.getSession();
+		session.beginTransaction();
+		TypedQuery<User> query = session.createQuery(GET_ALL_USERS);
+		List<User> list = query.getResultList();
+		session.close();
+		return list;
+	}
+
+
+
+	@Override
+	public User findById(int id) {
+		// TODO Auto-generated method stub
+		User user = (User) HibernateSession.getObjectByPrimaryKey(User.class, id);
+		return user;
+	}
+
+	@Override
 	public void delete(User user) {
+		// TODO Auto-generated method stub
+		//HibernateSession.
+	}
+
+	@Override
+	public void updateUser(User user) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 
 }

@@ -1,0 +1,12 @@
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/db/AppUser.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/hibernate/HibernateSession.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/utils/SHAHash.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/context/RequestContext.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/bean/Register.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/context/ApplicationContext.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/model/AppUserModel.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/bean/Login.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/context/ViewContext.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/hibernate/SQL.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/context/SessionContext.java
+/home/orlando/Documents/projects/WebAppsBase/jsf-template/src/com/jsftemplate/bean/Form.java
