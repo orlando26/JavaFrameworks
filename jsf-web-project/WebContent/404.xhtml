@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui"
+	xmlns:cc="http://java.sun.com/jsf/composite/cc">
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:body>
+			<div class="nb-error">
+				<div class="error-code">404</div>
+				<h3 class="font-bold">We couldn't find the page..</h3>
+
+				<div class="error-desc">
+					Sorry, but the page you are looking for was either not found or
+					does not exist. <br /> Try refreshing the page or click the button
+					below to go back to the Homepage.
+					<div class="input-group">
+						<input type="text" placeholder="Try with a search"
+							class="form-control"></input> <span class="input-group-btn">
+							<button type="button" class="btn btn-default">
+								<em class="fa fa-search"></em>
+							</button>
+						</span>
+					</div>
+					<ul class="list-inline text-center text-sm">
+						<li class="list-inline-item"><a
+							href="http://nextbootstrap.com" class="text-muted">Go to App</a>
+						</li>
+						<li class="list-inline-item"><a
+							href="http://nextbootstrap.com" class="text-muted">Login</a></li>
+						<li class="list-inline-item"><a
+							href="http://nextbootstrap.com" class="text-muted">Register</a></li>
+					</ul>
+					<div class="text-center">
+						<span>©</span> <span>2017</span> <span>-</span> <span>Orlando Loza</span>
+						<br /> <span>List App</span>
+					</div>
+				</div>
+			</div>
+		</h:body>
+
+	</ui:define>
+</ui:composition>
+</html>

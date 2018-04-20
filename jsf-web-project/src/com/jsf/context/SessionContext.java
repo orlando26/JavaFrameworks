@@ -2,29 +2,34 @@ package com.jsf.context;
 
 import java.io.Serializable;
 
-import javax.annotation.ManagedBean;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
-import com.jsf.bean.Main;
+import com.jsf.bean.Header;
 
 @ManagedBean
+@SessionScoped
 public class SessionContext implements Serializable{
 
 	/**
-	 * 	SessionContext Bean
+	 * SessionContext Bean
 	 */
 	private static final long serialVersionUID = 1L;
-
-	private Main main;
-
-	public Main getMain() {
-		if (main == null){
-			main = new Main();
+	
+	private Header header;
+	
+	public Header getHeader() {
+		if(header == null){
+			header = new Header();
 		}
-		return main;
+		return header;
 	}
 
-	public void setMain(Main main) {
-		this.main = main;
+	public void setHeader(Header header) {
+		this.header = header;
 	}
-		
+
+
+	
+
 }

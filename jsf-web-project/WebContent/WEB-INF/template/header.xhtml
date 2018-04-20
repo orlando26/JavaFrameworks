@@ -9,7 +9,7 @@
 	  xmlns:b="http://bootsfaces.net/ui">
 <h:body>
 	
-	<b:navBar brand="JSF-Template" brandHref="/jsf-template/pages/home.xhtml" fixed="top" inverse="true">
+	<b:navBar brand="JSF-App" brandHref="/jsf-web-project/pages/home.xhtml" fixed="top" inverse="true">
             <b:navbarLinks>
                 <b:navLink value="Home" href="#"></b:navLink>
                 <b:navLink value="About" href="#about"></b:navLink>
@@ -17,7 +17,7 @@
             </b:navbarLinks>
             <h:form id="header-form" styleClass="navbar-form navbar-right">
             <c:set var="header" value="#{SessionContext.header}"></c:set>
-            <b:commandButton rendered="#{header.session}" actionListener="#{header.logOut}" icon="log-out" value="Log Out" look="danger" iconAlign="right"/>
+            <b:commandButton rendered="#{header.sess}" actionListener="#{header.logout}" icon="log-out" value="Log Out" look="danger" iconAlign="right"/>
             </h:form>
         </b:navBar>
 	

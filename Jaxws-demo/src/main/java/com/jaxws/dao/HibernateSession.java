@@ -18,6 +18,22 @@ public class HibernateSession {
 		session.close();
 	}
 	
+	public static void deleteObject(Object object){
+		session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.delete(object);
+		session.getTransaction().commit();
+		session.close();
+	}
+	
+	public static void updateObject(Object object){
+		session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.update(object);
+		session.getTransaction().commit();
+		session.close();
+	}
+	
 	public static <T> Object getObjectByPrimaryKey(Class<T> objectClass, Serializable pk){
 		session = sessionFactory.openSession();
 		session.beginTransaction();

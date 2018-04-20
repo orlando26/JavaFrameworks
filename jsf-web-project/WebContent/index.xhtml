@@ -6,35 +6,35 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-	xmlns:p="http://primefaces.org/ui" 
-	xmlns:b="http://bootsfaces.net/ui"
-	xmlns:cc="http://java.sun.com/jsf/composite/cc">
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
 
-<h:head>
-	<title>JSF</title>
-</h:head>
-<h:body>
-	<c:set var="bean" value="#{SessionContext.main}"></c:set>
-	<h:form>  
-		<b:jumbotron>
-			<h2>Login</h2>
-			
-			<b:inputText id="username" value="#{bean.username}" placeholder="Username">
-				<f:facet name="prepend">
-						<b:icon name="user"/>
-					</f:facet>
-			</b:inputText>
-			<b:inputText id="password" type="password" value="#{bean.password}" placeholder="Password">
-					<f:facet name="prepend">
-					<b:icon name="lock"/>
-				</f:facet>
-			</b:inputText>
-			
-			<b:commandButton action="#{bean.login}" value="Login" look="primary btn-block" size="lg" icon="log-in">
-				
-			</b:commandButton>
-		</b:jumbotron>
-	</h:form>
-</h:body>
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:body>
+			<c:set var="log" value="#{viewContext.login}"></c:set>
+			<b:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+			<b:jumbotron>
+				<h:form styleClass="form-signin" prependId="false">
+					<h2 class="form-signin-heading">Please sign in</h2>
+					<b:inputText id="email" value="#{log.username}" placeholder="Email address" >
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+					</b:inputText>
+					<b:inputText id="password" value="#{log.password}" placeholder="Password" type="password" >
+						<f:facet name="prepend">
+							<b:iconAwesome name="key" />
+						</f:facet>
+					</b:inputText>
+					<h4>
+						<p:commandLink value="Register" ajax="false" actionListener="#{log.regPage}"></p:commandLink>
+					</h4>
+					<b:commandButton action="#{log.login}" look="primary btn-block" value="Sign In" icon="log-in" size="lg" />
 
+				</h:form>
+			</b:jumbotron>
+		</h:body>
+
+	</ui:define>
+</ui:composition>
 </html>

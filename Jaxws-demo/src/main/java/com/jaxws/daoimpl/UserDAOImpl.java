@@ -12,8 +12,7 @@ import com.jaxws.dao.UserDAO;
 
 public class UserDAOImpl implements UserDAO{
 
-	private static final String INSERT_QUERY =
-			"INSERT INTO USER (Id, Name, Last_Name, Email, Age, Address, Password) VALUES (NULL, ?, ?, ?, ?, ?, ?)";
+	
 	
 	private static final String FIND_BY_EMAIL = "FROM User where Email = :email";
 	
@@ -57,13 +56,13 @@ public class UserDAOImpl implements UserDAO{
 	@Override
 	public void delete(User user) {
 		// TODO Auto-generated method stub
-		//HibernateSession.
+		HibernateSession.deleteObject(user);
 	}
 
 	@Override
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
-		
+		HibernateSession.updateObject(user);
 	}
 
 
