@@ -1,6 +1,5 @@
 package com.jsf.bean;
 
-import javax.xml.rpc.ServiceException;
 
 
 public class Login extends Form{

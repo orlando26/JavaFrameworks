@@ -11,7 +11,60 @@
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="content">
 		<h:body>
-			<h1>Register page</h1>
+			<c:set var="reg" value="#{viewContext.register}"></c:set>
+			<h:form>
+				<h1>Register page</h1>
+			
+			<b:inputText id="name" value="#{reg.name}" placeholder="Name">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="last_name" value="#{reg.lastName}" placeholder="Last Name">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="email" value="#{reg.email}" placeholder="Email">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="age" value="#{reg.age}" placeholder="Age">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="city" value="#{reg.city}" placeholder="city">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="state" value="#{reg.state}" placeholder="State">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="address" value="#{reg.address}" placeholder="Address">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="password" value="#{reg.password}" placeholder="Password" type="password">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:commandButton action="#{reg.register}" look="primary btn-block" value="Sign In" icon="log-in" size="lg" />
+			</h:form>
 		</h:body>
 
 	</ui:define>

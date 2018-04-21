@@ -1,5 +1,7 @@
 package com.jaxws.ws;
 
+import java.util.List;
+
 import javax.jws.WebService;
 
 import com.jaxws.bo.User;
@@ -15,6 +17,15 @@ public class RetrieveUserServiceImpl implements RetrieveUserService{
 
 		User user = userDao.findUserByEmail(email);
 		return user;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		UserDAO userDao = new UserDAOImpl();
+		
+		List<User> users = userDao.getAllUsers();
+		return users;
 	}
 
 }

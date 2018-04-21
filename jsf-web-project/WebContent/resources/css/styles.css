@@ -18,7 +18,7 @@
   color: red !important;
 }
 
-.nb-error .error-code {
+.nb-error .error-code 
   color: #2d353c !important;
   font-size: 96px !important;
   line-height: 100px !important;
