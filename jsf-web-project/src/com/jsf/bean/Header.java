@@ -1,5 +1,6 @@
 package com.jsf.bean;
 
+import com.jsf.utils.SessionUtil;
 
 public class Header extends Form{
 
@@ -13,11 +14,13 @@ public class Header extends Form{
 	
 	public void logout(){
 		System.out.println("Log out!");
+		SessionUtil.getSession().invalidate();
+		redirect("/index.xhtml");
 	}
 
 
 	public boolean getSess() {
-		return sess;
+		return SessionUtil.isValid();
 	}
 
 

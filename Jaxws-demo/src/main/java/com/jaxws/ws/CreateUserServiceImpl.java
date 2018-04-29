@@ -18,7 +18,7 @@ public class CreateUserServiceImpl implements CreateUserService{
 			UserDAO userDao = new UserDAOImpl();
 			userDao.insert(user);
 		}catch(Exception e){
-			return "Error inserting user";
+			return "Error inserting user: " + e.getMessage();
 		}
 		
 		return "Success!";

@@ -5,7 +5,10 @@ import java.rmi.RemoteException;
 import javax.xml.rpc.ServiceException;
 
 import com.jaxws.ws.CreateUserService;
-import com.jaxws.ws.CreateUserServiceImplServiceLocator;
+import com.jaxws.ws.CreateUserServiceImplService;
+import com.jaxws.ws.ObjectFactory;
+import com.jaxws.ws.RetrieveUserService;
+import com.jaxws.ws.RetrieveUserServiceImplService;
 import com.jaxws.ws.User;
 
 public class Register extends Form{
@@ -40,10 +43,15 @@ public class Register extends Form{
 						"\nState: " + state +
 						"\nCity: " + city +
 						"\nPassword: " + password;
+		System.out.println(data);
 		
-		CreateUserServiceImplServiceLocator service = new CreateUserServiceImplServiceLocator();
-		try {
-			CreateUserService createUser = service.getCreateUserServiceImplPort();
+		CreateUserServiceImplService service = new CreateUserServiceImplService();
+		RetrieveUserServiceImplService retrieveService = new RetrieveUserServiceImplService();
+		RetrieveUserService retrieveUserService = retrieveService.getRetrieveUserServiceImplPort();
+		
+		CreateUserService createUserService = service.getCreateUserServiceImplPort();
+		
+		if(retrieveUserService.getUserByEmail(email) == null){
 			User user = new User();
 			user.setName(name);
 			user.setLastName(lastName);
@@ -52,13 +60,15 @@ public class Register extends Form{
 			user.setAddress(address);
 			user.setState(state);
 			user.setEmail(email);
-			createUser.insertUser(user);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			user.setPassword(password);
+			
+			String response = createUserService.insertUser(user);
+			System.out.println(response);
+		}else{
+			System.out.println("User " + email + " already exist.");
 		}
 		
-		System.out.println(data);
+		
 	}
 	
 

@@ -34,7 +34,6 @@ public class AuthorizationFilter implements Filter{
 			String reqURI = reqt.getRequestURI();
 			if (reqURI.indexOf("/index.xhtml") >= 0
 					|| (ses != null && ses.getAttribute("user") != null)
-					|| reqURI.indexOf("/pages/home.xhtml") >= 0
 					|| reqURI.indexOf("/pages/register.xhtml") >= 0
 					|| reqURI.indexOf("/404.xhtml") >= 0
 					|| reqURI.indexOf("/pages/confirmemail.xhtml") >= 0

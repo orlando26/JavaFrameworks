@@ -14,11 +14,22 @@
 			<c:set var="home" value="#{viewContext.home}"></c:set>
 			<h1>Home Page</h1>
 			<h:form>
-				<b:dataTable value="#{home.users}" var="user">
+				<b:dataTable id="usersTable" value="#{home.users}" var="user">
+					<b:dataTableColumn value="#{user.id}"></b:dataTableColumn>
 					<b:dataTableColumn value="#{user.name}"></b:dataTableColumn>
 					<b:dataTableColumn value="#{user.lastName}"></b:dataTableColumn>
 					<b:dataTableColumn value="#{user.age}"></b:dataTableColumn>
+					<b:dataTableColumn value="#{user.email}"></b:dataTableColumn>
+					<b:dataTableColumn value="#{user.address}"></b:dataTableColumn>
+					<b:dataTableColumn value="#{user.state}"></b:dataTableColumn>
+					<b:dataTableColumn value="#{user.city}"></b:dataTableColumn>
+					<b:dataTableColumn label="Operations">
+						<b:commandButton value="" look="danger" onclick="deleteUser(#{user.id})" icon="remove" size="lg"></b:commandButton>
+						<b:commandButton value=""  look="info" icon="pencil" action="#{home.update(user.id)}" ajax="false" size="lg"></b:commandButton>
+					</b:dataTableColumn>
 				</b:dataTable>
+				<b:remoteCommand name="deleteUser" actionListener="#{home.delete}" update="@form" parameters="id"></b:remoteCommand>
+				<b:remoteCommand name="updateUser" action="#{home.update}" ajax="false" parameters="id"></b:remoteCommand>
 			</h:form>
 			
 		</h:body>

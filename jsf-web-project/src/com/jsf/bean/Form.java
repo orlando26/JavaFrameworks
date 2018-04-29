@@ -5,8 +5,11 @@ import java.io.Serializable;
 
 import javax.el.ELContext;
 import javax.faces.context.FacesContext;
+import javax.faces.context.Flash;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.jsf.utils.WebServices;
 
 public class Form implements Serializable{
 
@@ -14,7 +17,7 @@ public class Form implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Gets the faces context
 	 * @return FacesContext
@@ -22,7 +25,7 @@ public class Form implements Serializable{
 	public FacesContext getFacesContext(){
 		return FacesContext.getCurrentInstance();
 	}
-	
+
 	/**
 	 * Gets the URL parameter
 	 * 
@@ -33,7 +36,7 @@ public class Form implements Serializable{
 	public String getParam(String paramName){
 		return getFacesContext().getExternalContext().getRequestParameterMap().get(paramName);
 	}
-	
+
 	/**
 	 * Gets the value of an EL expresion
 	 * @param beanName
@@ -47,7 +50,7 @@ public class Form implements Serializable{
 		}
 		return o;
 	}
-	
+
 	/**
 	 * Gets the request object
 	 * @return the request Object
@@ -55,7 +58,7 @@ public class Form implements Serializable{
 	public HttpServletRequest getRequest(){
 		return (HttpServletRequest) getFacesContext().getExternalContext().getRequest();
 	}
-	
+
 	/**
 	 * Gets the response object
 	 * @return the response Object
@@ -63,7 +66,7 @@ public class Form implements Serializable{
 	public HttpServletResponse getResponse(){
 		return (HttpServletResponse) getFacesContext().getExternalContext().getResponse();
 	}
-	
+
 	/**
 	 * Performs a redirect to another page
 	 * @param url
@@ -71,7 +74,7 @@ public class Form implements Serializable{
 	public void redirect(String url){
 		assert url != null;
 		assert url.startsWith("/");
-		
+
 		FacesContext context = getFacesContext();
 		context.responseComplete();
 		HttpServletResponse response = getResponse();
@@ -81,10 +84,26 @@ public class Form implements Serializable{
 			throw new RuntimeException(e);
 		}	
 	}
-	
+
 	protected Object getSessionBean(String bean){
 		Object object = getFacesContext().getExternalContext().getSessionMap().get(bean);
 		return object;
+	}
+
+	/**
+	 * Gets an instance of the WebServices repository class.
+	 * @return a WebServices instance
+	 */
+	public WebServices getServices(){
+		return new WebServices();
+	}
+
+	public Flash getFlash(){
+		Flash flash = getFacesContext().getExternalContext().getFlash();
+		flash.setKeepMessages(false);
+		flash.setRedirect(false);
+
+		return flash;
 	}
 
 }

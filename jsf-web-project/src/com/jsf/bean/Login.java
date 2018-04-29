@@ -1,6 +1,8 @@
 package com.jsf.bean;
 
-
+import com.jaxws.ws.User;
+import com.jsf.utils.SHAHash;
+import com.jsf.utils.SessionUtil;
 
 public class Login extends Form{
 
@@ -17,6 +19,14 @@ public class Login extends Form{
 	/* Methods */
 	public void login(){
 		System.out.println("Username: " + username + "\nPassword: " + password);
+		User user = getServices().getRetrieveUserService().getUserByEmail(username);
+		if(user != null){
+			if(user.getPassword().equals(SHAHash.hash(password))){
+				System.out.println("User logged!");
+				SessionUtil.setUserLogged(user);
+				redirect("/pages/home.xhtml");
+			}
+		}
 	}
 	
 	public void regPage(){

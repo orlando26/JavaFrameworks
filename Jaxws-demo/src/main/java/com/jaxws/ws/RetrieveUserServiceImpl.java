@@ -14,8 +14,12 @@ public class RetrieveUserServiceImpl implements RetrieveUserService{
 	@Override
 	public User getUserByEmail(String email) {
 		UserDAO userDao = new UserDAOImpl();
-
-		User user = userDao.findUserByEmail(email);
+		User user;
+		try{
+			user = userDao.findUserByEmail(email);
+		}catch(IndexOutOfBoundsException e){
+			user = null;
+		}
 		return user;
 	}
 
