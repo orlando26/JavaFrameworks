@@ -8,6 +8,7 @@ import com.jaxws.ws.DeleteUserServiceImplService;
 import com.jaxws.ws.RetrieveUserService;
 import com.jaxws.ws.RetrieveUserServiceImplService;
 import com.jaxws.ws.User;
+import com.jsf.utils.SessionUtil;
 
 public class Home extends Form{
 
@@ -41,6 +42,7 @@ public class Home extends Form{
 	
 	public void update(int id){
 		System.out.println(id);
+		SessionUtil.setUserId(id);
 		System.out.println("redirecting...");
 		redirect("/pages/update.xhtml");
 	}

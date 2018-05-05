@@ -11,5 +11,7 @@ public interface RetrieveUserService {
 	
 	User getUserByEmail(String email);
 	
+	User getUserById(int id);
+	
 	List<User> getAllUsers();
 }

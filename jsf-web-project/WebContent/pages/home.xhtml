@@ -28,10 +28,7 @@
 						<b:commandButton value=""  look="info" icon="pencil" action="#{home.update(user.id)}" ajax="false" size="lg"></b:commandButton>
 					</b:dataTableColumn>
 				</b:dataTable>
-				<b:remoteCommand name="deleteUser" actionListener="#{home.delete}" parameters="id"></b:remoteCommand>
-				<b:remoteCommand name="updateUser" action="#{home.update}" ajax="false" parameters="id"></b:remoteCommand>
 			</h:form>
-			
 		</h:body>
 
 	</ui:define>

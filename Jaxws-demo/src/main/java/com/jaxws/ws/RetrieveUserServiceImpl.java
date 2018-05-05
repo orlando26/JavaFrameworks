@@ -32,4 +32,11 @@ public class RetrieveUserServiceImpl implements RetrieveUserService{
 		return users;
 	}
 
+	@Override
+	public User getUserById(int id) {
+		UserDAO userDao = new UserDAOImpl();
+		User user = userDao.findById(id);
+		return user;
+	}
+
 }

@@ -28,6 +28,18 @@ public class SessionUtil {
 				.getExternalContext().getSession(false);
 		return (User)session.getAttribute("user");
 	}
+	
+	public static void setUserId(int id){
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+				.getExternalContext().getSession(true);
+		session.setAttribute("userId", id);
+	}
+	
+	public static Integer getUserId() {
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance()
+				.getExternalContext().getSession(false);
+		return (Integer)session.getAttribute("userId");
+	}
 
 	public static boolean isValid(){
 		if(getUser() == null){

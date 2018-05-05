@@ -1,5 +1,12 @@
 package com.jaxws.ws;
 
-public interface UpdateUserService {
+import javax.jws.WebService;
 
+import com.jaxws.bo.User;
+
+@WebService
+public interface UpdateUserService {
+	
+	public String updateUser(User user);
+	
 }
