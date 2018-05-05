@@ -24,11 +24,11 @@
 					<b:dataTableColumn value="#{user.state}"></b:dataTableColumn>
 					<b:dataTableColumn value="#{user.city}"></b:dataTableColumn>
 					<b:dataTableColumn label="Operations">
-						<b:commandButton value="" look="danger" onclick="deleteUser(#{user.id})" icon="remove" size="lg"></b:commandButton>
+						<b:commandButton value="" look="danger" action="#{home.delete(user.id)}" update="@form" icon="remove" size="lg"></b:commandButton>
 						<b:commandButton value=""  look="info" icon="pencil" action="#{home.update(user.id)}" ajax="false" size="lg"></b:commandButton>
 					</b:dataTableColumn>
 				</b:dataTable>
-				<b:remoteCommand name="deleteUser" actionListener="#{home.delete}" update="@form" parameters="id"></b:remoteCommand>
+				<b:remoteCommand name="deleteUser" actionListener="#{home.delete}" parameters="id"></b:remoteCommand>
 				<b:remoteCommand name="updateUser" action="#{home.update}" ajax="false" parameters="id"></b:remoteCommand>
 			</h:form>
 			

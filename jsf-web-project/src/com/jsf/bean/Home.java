@@ -18,20 +18,30 @@ public class Home extends Form{
 	
 	private List<User> users = new ArrayList<User>();
 	
-	public void delete(){
-		int id = Integer.parseInt(getParam("id"));
+	public Home(){
+		RetrieveUserServiceImplService service = new RetrieveUserServiceImplService();
+		RetrieveUserService retrieveUser = service.getRetrieveUserServiceImplPort();
+		
+		users = retrieveUser.getAllUsers();
+	}
+	
+	public void delete(int id){
 		System.out.println(id);
 		
 		DeleteUserServiceImplService service = new DeleteUserServiceImplService();
 		DeleteUserService deleteUserService = service.getDeleteUserServiceImplPort();
 		
 		deleteUserService.deleteUser(id);
+		
+		RetrieveUserServiceImplService serviceRetrieve = new RetrieveUserServiceImplService();
+		RetrieveUserService retrieveUser = serviceRetrieve.getRetrieveUserServiceImplPort();
+		
+		users = retrieveUser.getAllUsers();
 	}
 	
 	public void update(int id){
 		System.out.println(id);
 		System.out.println("redirecting...");
-		getFlash().put("userId", id);
 		redirect("/pages/update.xhtml");
 	}
 
@@ -39,11 +49,6 @@ public class Home extends Form{
 	 * @return the users
 	 */
 	public List<User> getUsers() {
-		RetrieveUserServiceImplService service = new RetrieveUserServiceImplService();
-		RetrieveUserService retrieveUser = service.getRetrieveUserServiceImplPort();
-		
-		users = retrieveUser.getAllUsers();
-		
 		return users;
 	}
 	
