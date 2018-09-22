@@ -4,6 +4,10 @@ import com.jaxws.ws.CreateUserService;
 import com.jaxws.ws.CreateUserServiceImplService;
 import com.jaxws.ws.DeleteUserService;
 import com.jaxws.ws.DeleteUserServiceImplService;
+import com.jaxws.ws.RetrieveCitiesService;
+import com.jaxws.ws.RetrieveCitiesServiceImplService;
+import com.jaxws.ws.RetrieveStatesService;
+import com.jaxws.ws.RetrieveStatesServiceImplService;
 import com.jaxws.ws.RetrieveUserService;
 import com.jaxws.ws.RetrieveUserServiceImplService;
 
@@ -14,6 +18,26 @@ public class WebServices {
 	DeleteUserService deleteUserService;
 	
 	RetrieveUserService retrieveUserService;
+	
+	RetrieveStatesService retrieveStateService;
+	
+	RetrieveCitiesService retrieveCitiesService;
+
+	public RetrieveStatesService getRetrieveStateService() {
+		return new RetrieveStatesServiceImplService().getRetrieveStatesServiceImplPort();
+	}
+
+	public void setRetrieveStateService(RetrieveStatesService retrieveStateService) {
+		this.retrieveStateService = retrieveStateService;
+	}
+
+	public RetrieveCitiesService getRetrieveCitiesService() {
+		return new RetrieveCitiesServiceImplService().getRetrieveCitiesServiceImplPort();
+	}
+
+	public void setRetrieveCitiesService(RetrieveCitiesService retrieveCitiesService) {
+		this.retrieveCitiesService = retrieveCitiesService;
+	}
 
 	/**
 	 * @return the createUserService

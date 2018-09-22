@@ -39,17 +39,23 @@
 						</f:facet>
 			</b:inputText>
 			
-			<b:inputText id="city" value="#{reg.city}" placeholder="city">
-						<f:facet name="prepend">
-							<b:icon name="user" />
-						</f:facet>
-			</b:inputText>
+			<b:selectOneMenu value="#{reg.state}">
+				<f:selectItems value="#{reg.states}" var="state" itemLabel="#{state.name}"></f:selectItems>
+				<p:ajax event="change" update="cities-select"/>
+	
+				<f:facet name="prepend">
+					<b:icon name="user" />
+				</f:facet>
+			</b:selectOneMenu>
 			
-			<b:inputText id="state" value="#{reg.state}" placeholder="State">
-						<f:facet name="prepend">
-							<b:icon name="user" />
-						</f:facet>
-			</b:inputText>
+			<b:selectOneMenu value="#{reg.city}" id="cities-select">
+				<f:selectItems value="#{reg.cities}" var="city" itemLabel="#{city.name}"></f:selectItems>
+				<f:facet name="prepend">
+					<b:icon name="user" />
+				</f:facet>
+			</b:selectOneMenu>
+			
+			
 			
 			<b:inputText id="address" value="#{reg.address}" placeholder="Address">
 						<f:facet name="prepend">

@@ -23,7 +23,7 @@
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
-			 <!-- <plugin>
+			  <!-- <plugin>
 				<groupId>org.apache.cxf</groupId>
 				<artifactId>cxf-codegen-plugin</artifactId>
 				<version>3.2.4</version>
@@ -35,7 +35,7 @@
 							<sourceRoot>cxf-src</sourceRoot>
 							<wsdlOptions>
 								<wsdlOption>
-									<wsdl>http://localhost:8080/Jaxws-demo/DeleteUserService?wsdl</wsdl>
+									<wsdl>http://localhost:8080/Jaxws-demo/RetrieveUserService?wsdl</wsdl>
 								</wsdlOption>
 							</wsdlOptions>
 						</configuration>

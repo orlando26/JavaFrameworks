@@ -1,14 +1,17 @@
 package com.jsf.bean;
 
 import java.rmi.RemoteException;
+import java.util.List;
 
 import javax.xml.rpc.ServiceException;
 
+import com.jaxws.ws.City;
 import com.jaxws.ws.CreateUserService;
 import com.jaxws.ws.CreateUserServiceImplService;
 import com.jaxws.ws.ObjectFactory;
 import com.jaxws.ws.RetrieveUserService;
 import com.jaxws.ws.RetrieveUserServiceImplService;
+import com.jaxws.ws.State;
 import com.jaxws.ws.User;
 
 public class Register extends Form{
@@ -28,11 +31,21 @@ public class Register extends Form{
 
 	private String address;
 
-	private String state;
+	private State state;
 
-	private String city;
+	private City city;
 
 	private String password;
+	
+	private List<State> states;
+	
+	private List<City> cities;
+	
+	public Register(){
+		//this.cities = getServices().getRetrieveCitiesService().getAllByState(1);
+		state = new State();
+		state.setId(1);
+	}
 	
 	public void register(){
 		String data = "Name: " + name + 
@@ -56,9 +69,9 @@ public class Register extends Form{
 			user.setName(name);
 			user.setLastName(lastName);
 			user.setAge(age);
-			user.setCity(city);
+			user.setCity(city.getName());
 			user.setAddress(address);
-			user.setState(state);
+			user.setState(state.getName());
 			user.setEmail(email);
 			user.setPassword(password);
 			
@@ -112,19 +125,19 @@ public class Register extends Form{
 		this.address = address;
 	}
 
-	public String getState() {
+	public State getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(State state) {
 		this.state = state;
 	}
 
-	public String getCity() {
+	public City getCity() {
 		return city;
 	}
 
-	public void setCity(String city) {
+	public void setCity(City city) {
 		this.city = city;
 	}
 
@@ -134,6 +147,28 @@ public class Register extends Form{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+
+	public List<State> getStates() {
+		states = getServices().getRetrieveStateService().getAll();
+		return states;
+	}
+
+
+	public void setStates(List<State> states) {
+		this.states = states;
+	}
+
+
+	public List<City> getCities() {
+		cities = getServices().getRetrieveCitiesService().getAllByState(getState().getId());
+		return cities;
+	}
+
+
+	public void setCities(List<City> cities) {
+		this.cities = cities;
 	}
 
 }

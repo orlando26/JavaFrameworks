@@ -11,10 +11,61 @@
 <ui:composition template="/WEB-INF/template/template.xhtml">
 	<ui:define name="content">
 		<h:body>
-			<!-- <c:set var="update" value="#{viewContext.home}"></c:set> -->
+			<c:set var="update" value="#{viewContext.update}"></c:set> 
 			<h1>Update Page</h1>
 			<h:form>
-				
+				<h1>Register page</h1>
+			
+			<b:inputText id="name" value="#{reg.name}" placeholder="Name">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="last_name" value="#{reg.lastName}" placeholder="Last Name">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="email" value="#{reg.email}" placeholder="Email">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="age" value="#{reg.age}" placeholder="Age">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			<b:selectOneMenu value="#{reg.state}">
+				<f:selectItems value="#{reg.states}" var="state" itemLabel="#{state.name}"></f:selectItems>
+				<p:ajax event="change" update="cities-select"/>
+	
+				<f:facet name="prepend">
+					<b:icon name="user" />
+				</f:facet>
+			</b:selectOneMenu>
+			
+			<b:selectOneMenu value="#{reg.city}" id="cities-select">
+				<f:selectItems value="#{reg.cities}" var="city" itemLabel="#{city.name}"></f:selectItems>
+				<f:facet name="prepend">
+					<b:icon name="user" />
+				</f:facet>
+			</b:selectOneMenu>
+			
+			
+			
+			<b:inputText id="address" value="#{reg.address}" placeholder="Address">
+						<f:facet name="prepend">
+							<b:icon name="user" />
+						</f:facet>
+			</b:inputText>
+			
+			
+			<b:commandButton action="#{reg.update}" look="primary btn-block" value="Update" icon="log-in" size="lg" />
 			</h:form>
 			
 		</h:body>

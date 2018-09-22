@@ -13,17 +13,20 @@
 	<jaxws:endpoint id="retrieveUserService"
 		implementor="com.jaxws.ws.RetrieveUserServiceImpl" address="/RetrieveUserService" />
 
+	<jaxws:endpoint id="updateUserService"
+		implementor="com.jaxws.ws.UpdateUserServiceImpl" address="/UpdateUserService" />
+
 	<jaxws:endpoint id="createUserService" implementor="com.jaxws.ws.CreateUserServiceImpl"
 		address="/CreateUserService" />
 
 	<jaxws:endpoint id="deleteUserService" implementor="com.jaxws.ws.DeleteUserServiceImpl"
 		address="/DeleteUserService" />
 
-	<jaxws:endpoint id="retrieveStatesService" implementor="com.jaxws.ws.RetrieveStatesServiceImpl"
-		address="/RetrieveStatesService" />
+	<jaxws:endpoint id="retrieveStatesService"
+		implementor="com.jaxws.ws.RetrieveStatesServiceImpl" address="/RetrieveStatesService" />
 
-	<jaxws:endpoint id="retrieveCitiesService" implementor="com.jaxws.ws.RetrieveCitiesServiceImpl"
-		address="/RetrieveCitiesService" />
+	<jaxws:endpoint id="retrieveCitiesService"
+		implementor="com.jaxws.ws.RetrieveCitiesServiceImpl" address="/RetrieveCitiesService" />
 
 
 
