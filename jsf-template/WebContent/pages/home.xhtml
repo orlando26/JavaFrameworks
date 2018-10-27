@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:body>
+		<c:set var="home" value="#{viewContext.home}" ></c:set>
+		<h:form>
+		<h1>Home</h1>	
+		<h:outputLabel value="Hi #{home.person.name}"></h:outputLabel>
+		
+		<b:dataTable id="persons-table" value="#{home.persons}" var="person">
+			<b:dataTableColumn value="#{person.id}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.name}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.lastName}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.age}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.email}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.address}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.state}"></b:dataTableColumn>
+			<b:dataTableColumn value="#{person.city}"></b:dataTableColumn>
+			<b:dataTableColumn label="Operations">
+				<b:commandButton value="" look="danger" action="#{home.delete(person.id)}"
+					update="@form" icon="remove" size="lg"></b:commandButton>
+				<b:commandButton value="" look="info" action="#{home.update(person.id)}"
+					ajax="false" icon="pencil" size="lg"></b:commandButton>
+			</b:dataTableColumn>
+		</b:dataTable>
+		</h:form>
+			
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>

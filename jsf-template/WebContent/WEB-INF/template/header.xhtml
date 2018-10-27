@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:b="http://bootsfaces.net/ui">
+<h:body>
+	
+	<b:navBar brand="JSF-Template" brandHref="/jsf-template/pages/home.xhtml" fixed="top" inverse="true">
+            <b:navbarLinks>
+                <b:navLink value="Home" href="#"></b:navLink>
+                <b:navLink value="About" href="#about"></b:navLink>
+                <b:navLink value="Contact" href="#contact"></b:navLink>
+            </b:navbarLinks>
+            <h:form id="header-form" styleClass="navbar-form navbar-right">
+            <c:set var="header" value="#{SessionContext.header}"></c:set>
+            <b:commandButton rendered="#{header.session}" actionListener="#{header.logOut}" icon="log-out" value="Log Out" look="danger" iconAlign="right"/>
+            </h:form>
+        </b:navBar>
+	
+</h:body>
+</html>

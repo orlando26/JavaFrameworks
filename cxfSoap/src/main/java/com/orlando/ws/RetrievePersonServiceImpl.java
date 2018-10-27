@@ -20,7 +20,13 @@ public class RetrievePersonServiceImpl implements RetrievePersonService{
 	@Override
 	public Person findByEmail(String email) {
 		PersonDAO personDAO = new PersonDAOImpl();
-		return personDAO.findByEmail(email);
+		Person person;
+		try{
+			person = personDAO.findByEmail(email);
+		}catch(IndexOutOfBoundsException e) {
+			person = null;
+		}
+		return person;
 	}
 
 	@Override

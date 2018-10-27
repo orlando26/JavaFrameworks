@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Peliculas</h3>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of movies"  (click)="itemSelected(item)">
+      {{ item.title }}
+    </button> 
+
+  </ion-list>
+</ion-content>

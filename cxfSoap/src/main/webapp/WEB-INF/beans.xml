@@ -33,4 +33,15 @@
           implementor="com.orlando.ws.UpdatePersonServiceImpl" 
           address="/UpdatePersonService" />
           
+           <jaxws:endpoint 
+          id="retrieveStateService" 
+          implementor="com.orlando.ws.RetrieveStatesServiceImpl" 
+          address="/RetrieveStatesService" />
+          
+          <jaxws:endpoint 
+          id="retrieveCitiesService" 
+          implementor="com.orlando.ws.RetrieveCitiesServiceImpl" 
+          address="/RetrieveCitiesService" />
+          
+          
 </beans>

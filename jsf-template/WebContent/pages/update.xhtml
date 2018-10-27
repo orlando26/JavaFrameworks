@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+	<ui:define name="content">
+		<h:body>
+		<c:set var="reg" value="#{viewContext.update}" ></c:set>
+		<h:form>
+			<p:growl id="growlMsg" globalOnly="true" placementFrom="bottom"
+         show-detail="true" show-summary="false" allowDismiss="true"
+         delay="10000" escape="true" />
+			<h1>Update page</h1>
+		
+			<b:inputText id="name" value="#{reg.name}" placeholder="Name">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="lastName" value="#{reg.lastName}" placeholder="Last Name">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="email" value="#{reg.email}" placeholder="Email">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:inputText id="age" value="#{reg.age}" placeholder="Age">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:selectOneMenu id="state-combo" value="#{reg.state}">
+				<f:selectItems value="#{reg.stateList}" var="state" itemLabel="#{state.name}"></f:selectItems>
+				<p:ajax event="change" update="city-combo"></p:ajax>
+			</b:selectOneMenu>
+			
+			<b:selectOneMenu id="city-combo" value="#{reg.personCity}">
+				<f:selectItems value="#{reg.cityList}" var="city" itemLabel="#{city.name}"></f:selectItems>
+			</b:selectOneMenu>
+			
+			<b:inputText id="address" value="#{reg.address}" placeholder="Address">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputText>
+			
+			<b:inputSecret id="password" value="#{reg.password}" placeholder="Password">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputSecret>
+			
+			<b:inputSecret id="confirm_password" value="#{reg.confirmPassword}" placeholder="Password">
+					<f:facet name="prepend">
+						<b:icon name="user"></b:icon>
+					</f:facet>
+			</b:inputSecret>
+			
+			<b:commandButton value="Update" action="#{reg.update}" look="primary btn-block"
+					size="lg">
+			</b:commandButton>
+					
+			<b:commandButton value="Cancel" action="#{reg.cancel}" look="danger btn-block"
+					size="lg"></b:commandButton>
+			
+			
+		</h:form>
+			
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>
