@@ -26,8 +26,6 @@ public class Song {
     @Column(name="Time")
     private String time;
 
-    @Column(name="Genre")
-    private String genre;
 
 	public Integer getId() {
 		return id;
@@ -61,18 +59,9 @@ public class Song {
 		this.time = time;
 	}
 
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
 	@Override
 	public String toString() {
-		return "Song [id=" + id + ", albumId=" + albumId + ", title=" + title + ", time=" + time + ", genre=" + genre
-				+ "]";
+		return "Song [id=" + id + ", albumId=" + albumId + ", title=" + title + ", time=" + time + "]";
 	}
 
     

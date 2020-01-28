@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,5 +41,15 @@ public class AlbumController {
 	@DeleteMapping("/{albumId}")
 	public StandardResponse<Album> deleteById(@PathVariable("albumId") Integer id) {
 		return albumService.deleteById(id);
+	}
+	
+	@GetMapping("/count")
+	public Long count() {
+		return albumService.count();
+	}
+	
+	@PutMapping
+	public StandardResponse<Album> updateAlbum(@RequestBody Album album){
+		return albumService.updateAlbum(album);
 	}
 }

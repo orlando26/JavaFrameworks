@@ -52,4 +52,24 @@ public class AlbumService {
 		return response;
 	}
 	
+	public Long count() {
+		return albumRepository.count();
+	}
+	
+	public StandardResponse<Album> updateAlbum(Album album){
+		StandardResponse<Album> response = new StandardResponse<>();
+		
+		try {
+			albumRepository.getOne(album.getId());
+			response.setEntity(albumRepository.save(album));
+			response.setStatus("SUCCESS");
+			response.setResponseText("album with id " + album.getId() + " update!d");
+		}catch (Exception e) {
+			response.setEntity(album);
+			response.setStatus("ERROR");
+			response.setResponseText(e.getMessage());
+		}
+		return response;
+	}
+	
 }
