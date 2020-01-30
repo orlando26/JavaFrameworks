@@ -1,5 +1,6 @@
 package com.orlando.restServices.services;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,12 +9,16 @@ import org.springframework.stereotype.Service;
 import com.orlando.restServices.entity.Album;
 import com.orlando.restServices.entity.StandardResponse;
 import com.orlando.restServices.repository.AlbumRepository;
+import com.orlando.restServices.repository.SongRepository;
 
 @Service
 public class AlbumService {
 	
 	@Autowired
 	private AlbumRepository albumRepository;
+	
+	@Autowired
+	private SongRepository songRepository;
 	
 	public StandardResponse<Album> createAlbum(Album album) {
 		StandardResponse<Album> response = new StandardResponse<Album>();
@@ -41,10 +46,15 @@ public class AlbumService {
 		StandardResponse<Album> response = new StandardResponse<Album>();
 		try {
 			response.setEntity(findById(id));
+			if(!songRepository.findByAlbumId(id).isEmpty()) throw new SQLIntegrityConstraintViolationException();
 			albumRepository.deleteById(id);
 			response.setStatus("SUCCESS");
-			response.setResponseText("album with id: " + id + " deleted!" );
-		}catch(Exception e) {
+			response.setResponseText("album with id:  " + id + " deleted!" );
+		}catch (SQLIntegrityConstraintViolationException e) {
+			response.setEntity(null);
+			response.setStatus("ERROR");
+			response.setResponseText("Album with id " + id + " has songs saved!");
+		}catch (Exception e) {
 			response.setEntity(null);
 			response.setStatus("ERROR");
 			response.setResponseText(e.getMessage());

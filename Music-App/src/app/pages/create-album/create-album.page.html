@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>create-album</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Input with placeholder -->
+<!-- List of Text Items -->
+<ion-list>
+  <ion-item>
+    <ion-label position="floating">Title</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >Release Date</ion-label>
+    <ion-datetime [pickerOptions]="customPickerOptions" displayFormat="YYYY" min="1900" max="2020"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Price</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Genre</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+</ion-list>
+
+<ion-button expand="block" routerLink="/">Save</ion-button>
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>songs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label detail>Pokémon Yellow</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label detail>Mega Man X</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label detail>The Legend of Zelda</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label detail>Pac-Man</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label detail>Super Mario World</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" routerLink="/create-songs">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
