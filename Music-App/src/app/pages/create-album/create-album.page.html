@@ -13,24 +13,24 @@
 <ion-list>
   <ion-item>
     <ion-label position="floating">Title</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="album.title" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label >Release Date</ion-label>
-    <ion-datetime [pickerOptions]="customPickerOptions" displayFormat="YYYY" min="1900" max="2020"></ion-datetime>
+    <ion-datetime  [pickerOptions]="customPickerOptions" displayFormat="YYYY" min="1900" max="2020"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Price</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="album.price" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="floating">Genre</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="album.genre" ></ion-input>
   </ion-item>
 </ion-list>
 
-<ion-button expand="block" routerLink="/">Save</ion-button>
+<ion-button expand="block" (click)="saveAlbum()" >Save</ion-button>
 </ion-content>

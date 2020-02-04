@@ -21,6 +21,7 @@ public class AlbumService {
 	private SongRepository songRepository;
 	
 	public StandardResponse<Album> createAlbum(Album album) {
+		System.out.println(album);
 		StandardResponse<Album> response = new StandardResponse<Album>();
 		try {
 			response.setEntity(albumRepository.save(album));
