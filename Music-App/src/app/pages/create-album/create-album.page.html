@@ -11,14 +11,14 @@
   <!-- Input with placeholder -->
 <!-- List of Text Items -->
 <ion-list>
-  <ion-item>
+  <ion-item> 
     <ion-label position="floating">Title</ion-label>
     <ion-input [(ngModel)]="album.title" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label >Release Date</ion-label>
-    <ion-datetime  [pickerOptions]="customPickerOptions" displayFormat="YYYY" min="1900" max="2020"></ion-datetime>
+    <ion-datetime [(ngModel)]="album.releaseDate" [pickerOptions]="customPickerOptions" displayFormat="YYYY" min="1900" max="2020"></ion-datetime>
   </ion-item>
 
   <ion-item>

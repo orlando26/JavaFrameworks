@@ -11,19 +11,19 @@
   <ion-list>
     <ion-item>
       <ion-label position="floating">Album id</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="song.albumId" ></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label position="floating">Title</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="song.title"></ion-input>
     </ion-item>
   
     <ion-item>
       <ion-label position="floating">Time</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="song.time"></ion-input>
     </ion-item>
   </ion-list>
   
-  <ion-button expand="block" routerLink="/songs">Save</ion-button>
+  <ion-button expand="block" (click)="createSong()">Save</ion-button>
 </ion-content>

@@ -3,6 +3,7 @@ package com.orlando.restServices.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -34,6 +35,7 @@ public class SongController {
 	}
 	
 	@GetMapping("/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Gets a song by its Id.")
 	public Song findById(@PathVariable("id") Integer id) {
 		return songService.findById(id);
@@ -52,12 +54,14 @@ public class SongController {
 	}
 	
 	@PostMapping
+	@CrossOrigin
 	@ApiOperation(value = "Creates a song in the database.")
 	public StandardResponse<Song> createSongs(@RequestBody Song song){
 		return songService.create(song);
 	}
 	
 	@GetMapping("/album/{albumId}")
+	@CrossOrigin
 	@ApiOperation(value = "Retrieves all songs from an album by the album id.")
 	public List<Song> findByAlbumId(@PathVariable("albumId") Integer albumId){
 		return songService.findByAlbumId(albumId);

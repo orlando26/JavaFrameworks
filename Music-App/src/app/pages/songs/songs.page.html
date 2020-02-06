@@ -9,25 +9,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label detail>Pokémon Yellow</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label detail>Mega Man X</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label detail>The Legend of Zelda</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label detail>Pac-Man</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label detail>Super Mario World</ion-label>
+    <ion-item *ngFor="let song of songs" (click)="openSongDetailsPage(song.id)" detail>
+      <ion-label detail>{{song.title}}</ion-label>
     </ion-item>
   </ion-list>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="danger" routerLink="/create-songs">
+    <ion-fab-button color="danger" (click)="openCreateSongs()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>

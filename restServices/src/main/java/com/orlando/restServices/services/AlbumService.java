@@ -22,6 +22,7 @@ public class AlbumService {
 	
 	public StandardResponse<Album> createAlbum(Album album) {
 		System.out.println(album);
+		album.setReleaseDate(album.getReleaseDate().substring(0, 4));
 		StandardResponse<Album> response = new StandardResponse<Album>();
 		try {
 			response.setEntity(albumRepository.save(album));

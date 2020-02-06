@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/songs/songs.module').then( m => m.SongsPageModule)
   },
   {
+    path: 'songs/:albumId',
+    loadChildren: () => import('./pages/songs/songs.module').then( m => m.SongsPageModule)
+  },
+  {
     path: 'create-album',
     loadChildren: () => import('./pages/create-album/create-album.module').then( m => m.CreateAlbumPageModule)
   },
@@ -20,6 +24,19 @@ const routes: Routes = [
     path: 'create-songs',
     loadChildren: () => import('./pages/create-songs/create-songs.module').then( m => m.CreateSongsPageModule)
   },
+  {
+    path: 'create-songs/:albumId',
+    loadChildren: () => import('./pages/create-songs/create-songs.module').then( m => m.CreateSongsPageModule)
+  },
+  {
+    path: 'song-deatils',
+    loadChildren: () => import('./pages/song-deatils/song-deatils.module').then( m => m.SongDeatilsPageModule)
+  },
+  {
+    path: 'song-deatils/:songId',
+    loadChildren: () => import('./pages/song-deatils/song-deatils.module').then( m => m.SongDeatilsPageModule)
+  },
+
 ];
 
 @NgModule({
