@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.orlando.restServices.entity.Album;
 import com.orlando.restServices.entity.StandardResponse;
+import com.orlando.restServices.exceptions.EmptyValueException;
 import com.orlando.restServices.repository.AlbumRepository;
 import com.orlando.restServices.repository.SongRepository;
 
@@ -24,11 +25,26 @@ public class AlbumService {
 		System.out.println(album);
 		album.setReleaseDate(album.getReleaseDate().substring(0, 4));
 		StandardResponse<Album> response = new StandardResponse<Album>();
+		
 		try {
-			response.setEntity(albumRepository.save(album));
+			Double.parseDouble(album.getPrice());
+			if(album.checkEmpty()) throw new EmptyValueException("All fields are required");
+			
+			response.setEntity(albumRepository.save(album)); 
 			response.setStatus("SUCCESS");
 			response.setResponseText("album saved!");
-		}catch(Exception e) {
+		}catch(EmptyValueException e) {
+			response.setEntity(album);
+			response.setStatus("ERROR");
+			response.setResponseText(e.getMessage());
+		}
+
+		catch(NumberFormatException e) {
+			response.setEntity(null);
+			response.setStatus("ERROR");
+			response.setResponseText("double");
+		}
+		catch(Exception e) {
 			response.setEntity(null);
 			response.setStatus("ERROR");
 			response.setResponseText(e.getMessage());

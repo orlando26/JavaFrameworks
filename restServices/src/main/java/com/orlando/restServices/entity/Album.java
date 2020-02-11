@@ -68,6 +68,15 @@ public class Album {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+	
+	public boolean checkEmpty() {
+		if(this.getTitle().equals("") || 
+				this.getReleaseDate().equals("") || 
+				this.getPrice().equals("") || 
+				this.getGenre().equals("")) return true;
+		
+		return false;
+	}
 
 	@Override
 	public String toString() {

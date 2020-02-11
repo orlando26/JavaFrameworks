@@ -9,8 +9,13 @@ import { AlbumServiceService } from 'src/app/services/album-service.service';
   styleUrls: ['./song-deatils.page.scss'],
 })
 export class SongDeatilsPage implements OnInit {
-  private song = {}
-  private albumTitle:string = "";
+  private song:any = {
+    "albumId": 0,
+    "id": 0,
+    "time": "string",
+    "title": "string"
+  }
+  private album:any = {};
   constructor(private route:ActivatedRoute, private api:SongsService,
               private albumApi:AlbumServiceService) { }
 
@@ -21,7 +26,7 @@ export class SongDeatilsPage implements OnInit {
       this.song = res;
       
       this.albumApi.getalbumById(this.song.albumId).subscribe(res =>{
-        this.albumTitle = res.title;
+        this.album = res;
       });
 
     });
