@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import com.orlando.restServices.entity.Album;
 import com.orlando.restServices.entity.Song;
 import com.orlando.restServices.entity.StandardResponse;
+import com.orlando.restServices.exceptions.EmptyValueException;
 import com.orlando.restServices.repository.SongRepository;
+import com.orlando.restServices.util.UtilConstants;
 
 @Service
 public class SongService {
@@ -24,12 +26,23 @@ public class SongService {
 	public StandardResponse<Song> create(Song song){
 		StandardResponse<Song> response = new StandardResponse<>();
 		try {
+			Double.parseDouble(song.getTime());
+			if(song.checkEmpty()) throw new EmptyValueException("All fields are required");
+			
 			response.setEntity(songRepository.save(song));
-			response.setStatus("SUCCESS");
+			response.setStatus(UtilConstants.SUCCESS_MSG);
 			response.setResponseText("song saved!");
+		}catch(EmptyValueException e) {
+			response.setEntity(song);
+			response.setStatus(UtilConstants.ERROR_MSG);
+			response.setResponseText(e.getMessage());
+		}catch(NumberFormatException e) {
+			response.setEntity(null);
+			response.setStatus(UtilConstants.ERROR_MSG);
+			response.setResponseText("Invalid time value!");
 		}catch(Exception e) {
 			response.setEntity(null);
-			response.setStatus("ERROR");
+			response.setStatus(UtilConstants.ERROR_MSG);
 			response.setResponseText(e.getMessage());
 		}
 		return response;

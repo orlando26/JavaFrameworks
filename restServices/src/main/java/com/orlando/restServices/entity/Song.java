@@ -58,6 +58,12 @@ public class Song {
 	public void setTime(String time) {
 		this.time = time;
 	}
+	
+	public boolean checkEmpty() {
+		if(this.getTitle().equals("") || 
+				this.getTime().equals("")) return true;
+		return false;
+	}
 
 	@Override
 	public String toString() {

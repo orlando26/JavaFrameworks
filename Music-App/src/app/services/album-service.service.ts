@@ -26,4 +26,8 @@ export class AlbumServiceService {
     return this.http.post(this.albumApiUrl, JSON.stringify(album), header);
   }
 
+  deleteAlbum(albumId){
+    return this.http.delete(this.albumApiUrl + "/" + albumId);
+  }
+
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SongsService } from 'src/app/services/songs.service';
 import { AlbumServiceService } from 'src/app/services/album-service.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-song-deatils',
@@ -16,8 +17,10 @@ export class SongDeatilsPage implements OnInit {
     "title": "string"
   }
   private album:any = {};
+  private toast:any;
   constructor(private route:ActivatedRoute, private api:SongsService,
-              private albumApi:AlbumServiceService) { }
+              private albumApi:AlbumServiceService,
+              private toastController:ToastController) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("songId");
@@ -31,5 +34,7 @@ export class SongDeatilsPage implements OnInit {
 
     });
   }
+
+  
 
 }
