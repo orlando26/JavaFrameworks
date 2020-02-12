@@ -21,7 +21,20 @@ export class SongsService {
     return this.http.post(this.songApiUrl, JSON.stringify(song), header);
   }
 
+  updateSong(song){
+    let header = {
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+    return this.http.put(this.songApiUrl, JSON.stringify(song), header);
+  }
+
   getSongById(songId){
     return this.http.get(this.songApiUrl + songId);
+  }
+
+  deleteSong(songId){
+    return this.http.delete(this.songApiUrl + songId);
   }
 }

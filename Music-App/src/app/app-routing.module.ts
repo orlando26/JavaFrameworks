@@ -36,6 +36,19 @@ const routes: Routes = [
     path: 'song-deatils/:songId',
     loadChildren: () => import('./pages/song-deatils/song-deatils.module').then( m => m.SongDeatilsPageModule)
   },
+  {
+    path: 'edit-song',
+    loadChildren: () => import('./pages/edit-song/edit-song.module').then( m => m.EditSongPageModule)
+  },
+  {
+    path: 'edit-song/:songId',
+    loadChildren: () => import('./pages/edit-song/edit-song.module').then( m => m.EditSongPageModule)
+  },  {
+    path: 'edit-album',
+    loadChildren: () => import('./pages/edit-album/edit-album.module').then( m => m.EditAlbumPageModule)
+  },
+
+
 
 ];
 

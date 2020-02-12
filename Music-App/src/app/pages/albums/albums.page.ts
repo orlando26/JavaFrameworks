@@ -28,7 +28,6 @@ export class AlbumsPage implements OnInit {
       
     console.log(this.albums);
     });
-    this.albumApi.getalbumById(7).subscribe( res => {console.log(res)});
   }
 
   openSongsPage(albumId){

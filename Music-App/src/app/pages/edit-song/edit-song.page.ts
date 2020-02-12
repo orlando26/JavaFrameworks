@@ -4,59 +4,50 @@ import { SongsService } from 'src/app/services/songs.service';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-songs',
-  templateUrl: './songs.page.html',
-  styleUrls: ['./songs.page.scss'],
+  selector: 'app-edit-song',
+  templateUrl: './edit-song.page.html',
+  styleUrls: ['./edit-song.page.scss'],
 })
-export class SongsPage implements OnInit {
-  private songs:any = [];
-  private albumId;
+export class EditSongPage implements OnInit {
+  private song:any = {
+    "albumId": 0,
+    "time": "",
+    "title": ""
+  }
   private toast:any;
-  private response:any={
+  private response:any = {
     "status": "",
     "responseText": "",
     "entity": {}
   }
-  constructor(private route:ActivatedRoute,
+  constructor(private router:ActivatedRoute,
               private api:SongsService,
-              private router: Router,
-              private toastController:ToastController) { }
+              private toastController:ToastController,
+              private route:Router) { }
 
   ngOnInit() {
-    
   }
 
   ionViewWillEnter(){
-    this.albumId = this.route.snapshot.paramMap.get('albumId');
-    this.api.getAllByAlbumId(this.albumId).subscribe(res => {
-      this.songs = res;
-      console.log(this.songs);
-    } );
+    let songId = this.router.snapshot.paramMap.get("songId");
+    this.api.getSongById(songId).subscribe(res => {
+      this.song = res;
+      
+      console.log(this.song);
+    });
   }
 
-  openCreateSongs(){
-    this.router.navigateByUrl('create-songs/' + this.albumId);
-  }
-
-  openSongDetailsPage(songId){
-    this.router.navigateByUrl("song-deatils/" + songId);
-  }
-
-  delete(songId){
-    this.api.deleteSong(songId).subscribe(res =>{
+  updateSong(){
+    this.api.updateSong(this.song).subscribe(res => {
       this.response = res;
 
       if(this.response.status == "SUCCESS"){
         this.succesToast(this.response.responseText);
-        this.ionViewWillEnter();
+        this.route.navigateByUrl("/songs/"+this.song.albumId);
       }else{
         this.errorToast(this.response.responseText);
       }
     });
-  }
-
-  updateSong(songId){
-    this.router.navigateByUrl("edit-song/" + songId);
   }
 
   succesToast(msg){
