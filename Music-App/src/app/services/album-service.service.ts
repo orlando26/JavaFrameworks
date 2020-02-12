@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class AlbumServiceService {
 
-  private albumApiUrl: string = "http://localhost:8080/api/v1/album";
+  private albumApiUrl: string = "http://ec2-3-91-226-94.compute-1.amazonaws.com:8080/api/v1/album";
   constructor(private http: HttpClient) { }
 
   getAll(){

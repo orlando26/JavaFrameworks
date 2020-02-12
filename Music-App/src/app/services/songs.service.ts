@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SongsService {
-  private songApiUrl:string = "http://localhost:8080/api/v1/songs/";
+  private songApiUrl:string = "http://ec2-3-91-226-94.compute-1.amazonaws.com:8080/api/v1/songs/";
   constructor(private http:HttpClient) { }
 
   getAllByAlbumId(albumId){
