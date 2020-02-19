@@ -50,6 +50,10 @@ export class AlbumsPage implements OnInit {
     );
   }
 
+  update(albumId){
+    this.router.navigateByUrl('edit-album/'+albumId);
+  }
+
   succesToast(msg){
     this.toast = this.toastController.create({
       message: msg,
