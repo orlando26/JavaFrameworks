@@ -30,7 +30,7 @@ public class AlbumController {
 	@GetMapping
 	public List<Album> findAll(){
 		return albumService.findAll();
-	}
+	} 
 	
 	@GetMapping("/{albumId}")
 	public Album findById(@PathVariable("albumId") Integer id) {
