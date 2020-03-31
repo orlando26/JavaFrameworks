@@ -11,3 +11,4 @@ public class RestServicesApplication {
 	}
 
 }
+//build -> war
