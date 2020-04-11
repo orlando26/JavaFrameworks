@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.orlando.musicws.entity.Song;
 import com.orlando.musicws.repository.SongRepository;
 import com.orlando.musicws.util.StandardResponse;
+import com.orlando.musicws.util.UtilConstants;
 
 @Service
 public class SongService {
@@ -21,7 +22,7 @@ public class SongService {
 	 * @return repository findAll
 	 */
 	public List<Song> findAll(){
-		return null;
+		return songRepository.findAll();
 	}
 	
 	/**
@@ -31,7 +32,19 @@ public class SongService {
 	 * @return StandardResponse<Song>
 	 */
 	public StandardResponse<Song> save(Song song){
-		return null;
+		StandardResponse<Song> response = new StandardResponse<>();
+		try {
+			Double.parseDouble(song.getTime());
+			
+			response.setEntity(songRepository.save(song));
+			response.setStatus(UtilConstants.SUCCESS_MSG);
+			response.setResponseText("song saved!");
+		}catch(Exception e) {
+			response.setEntity(null);
+			response.setStatus(UtilConstants.ERROR_MSG);
+			response.setResponseText(e.getMessage());
+		}
+		return response;
 	}
 	
 	/**
@@ -41,7 +54,19 @@ public class SongService {
 	 * @return StandardResponse<Song>
 	 */
 	public StandardResponse<Song> updateSong(Song song){
-		return null;
+		StandardResponse<Song> response = new StandardResponse<>();
+
+		try {
+			songRepository.getOne(song.getId());
+			response.setEntity(songRepository.save(song));
+			response.setStatus("SUCCESS");
+			response.setResponseText("song with id " + song.getId() + " update!d");
+		}catch (Exception e) {
+			response.setEntity(song);
+			response.setStatus("ERROR");
+			response.setResponseText(e.getMessage());
+		}
+		return response;
 	}
 	
 	/**
@@ -51,7 +76,7 @@ public class SongService {
 	 * @return Song
 	 */
 	public Song findById(Integer id) {
-		return null;
+		return songRepository.getOne(id);
 	}
 	
 	/**
@@ -61,7 +86,18 @@ public class SongService {
 	 * @return StandardResponse<Song>
 	 */
 	public StandardResponse<Song> deleteById(Integer id) {
-		return null;
+		StandardResponse<Song> response = new StandardResponse<>();
+		try {
+			response.setEntity(findById(id));
+			songRepository.deleteById(id);
+			response.setStatus("SUCCESS");
+			response.setResponseText("song with id: " + id + " deleted!" );
+		}catch(Exception e) {
+			response.setEntity(null);
+			response.setStatus("ERROR");
+			response.setResponseText(e.getMessage());
+		}
+		return response;
 	}
 	
 }

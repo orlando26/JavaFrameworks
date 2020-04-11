@@ -8,3 +8,4 @@ import com.orlando.musicws.entity.Song;
 public interface SongRepository extends JpaRepository<Song, Integer>{
 
 }
+
