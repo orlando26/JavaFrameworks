@@ -12,6 +12,7 @@ public class Person {
 	private String email;
 	
 	private Integer age;
+	 
 
 	public Person(String name, String lastname, String email, Integer age) {
 		super();
@@ -19,10 +20,6 @@ public class Person {
 		this.lastname = lastname;
 		this.email = email;
 		this.age = age;
-	}
-	
-	public Person() {
-		
 	}
 
 	public String getName() {
@@ -56,11 +53,13 @@ public class Person {
 	public void setAge(Integer age) {
 		this.age = age;
 	}
+	
+	
+	
 
-	@Override
-	public String toString() {
-		return "Person [name=" + name + ", lastname=" + lastname + ", email=" + email + ", age=" + age + "]";
-	}
+	
+
+	
 	
 	
 	

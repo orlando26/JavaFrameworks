@@ -17,8 +17,12 @@ import com.orlando.musicws.entity.Song;
 import com.orlando.musicws.service.SongService;
 import com.orlando.musicws.util.StandardResponse;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/api/v1/song")
+@Api(tags = "Song API Controller", value = "songController", description = "API Info for Song Service")
 public class SongController {
 	
 	@Autowired
@@ -31,26 +35,36 @@ public class SongController {
 	
 	@GetMapping("/{id}")
 	@CrossOrigin
+	@ApiOperation(value = "Retrieves a Song by a given id.")
 	public Song findById(@PathVariable("id") Integer id) {
 		return songService.findById(id);
 	}
 	 
 	@DeleteMapping("/{id}")
 	@CrossOrigin
+	@ApiOperation(value = "deletes a Song by a given id.")
 	public StandardResponse<Song> deleteById(@PathVariable("id") Integer id){
 		return songService.deleteById(id);
 	}
 	
 	@PutMapping
 	@CrossOrigin
+	@ApiOperation(value = "Updates a Song by a given id.")
 	public StandardResponse<Song> update(@RequestBody Song song){
 		return songService.updateSong(song);
 	}
 	
 	@PostMapping
 	@CrossOrigin
+	@ApiOperation(value = "Creates a Song in the database.")
 	public StandardResponse<Song> createSongs(@RequestBody Song song){
 		return songService.save(song);
+	}
+	
+	@GetMapping("/album/{albumId}")
+	@ApiOperation(value = "Retrieves all songs in database.")
+	public List<Song> findByAlbumId(@PathVariable("albumId") Integer albumId){
+		return songService.findAllByAlbumId(albumId);
 	}
 	
 	

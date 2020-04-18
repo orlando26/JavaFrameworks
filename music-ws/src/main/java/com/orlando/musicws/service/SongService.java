@@ -100,4 +100,8 @@ public class SongService {
 		return response;
 	}
 	
+	public List<Song> findAllByAlbumId(Integer albumId){
+		return songRepository.findByAlbumId(albumId);
+	}
+	
 }
