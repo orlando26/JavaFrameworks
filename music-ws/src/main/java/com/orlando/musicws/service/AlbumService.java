@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orlando.musicws.entity.Album;
+import com.orlando.musicws.exceptions.EmptyValueException;
 import com.orlando.musicws.repository.AlbumRepository;
 import com.orlando.musicws.util.StandardResponse;
 import com.orlando.musicws.util.UtilConstants;
@@ -22,7 +23,9 @@ public class AlbumService {
 	public StandardResponse<Album> save(Album album) {
 		StandardResponse<Album> response = new StandardResponse<>();
 		try {
-			response.setEntity(albumRepository.save(album));
+			if(album.checkEmpty()) throw new EmptyValueException("All fields are required!");
+			
+			response.setEntity(albumRepository.save(album)); 
 			response.setStatus(UtilConstants.SUCCESS_MSG);
 			response.setResponseText("album saved!");
 		}catch (Exception e) {

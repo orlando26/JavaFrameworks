@@ -1,5 +1,6 @@
 import { AlbumService } from './../../services/album.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-albums',
@@ -10,18 +11,23 @@ export class AlbumsPage implements OnInit {
 
   public albumsList: any = [];
 
-  constructor(private api: AlbumService) { }
+  constructor(private api: AlbumService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() { // listener
    this.api.getAll().subscribe(
      res => {
        this.albumsList = res;
        console.log(this.albumsList);
      }
    );
+  }
+
+
+  openSongsPage(albumId){
+    this.router.navigateByUrl('/songs/' + albumId);
   }
 
 }

@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'create-song',
     loadChildren: () => import('./create-song/create-song.module').then( m => m.CreateSongPageModule)
+  },
+  {
+    path: 'create-song/:albumId',
+    loadChildren: () => import('./create-song/create-song.module').then( m => m.CreateSongPageModule)
   }
 ];
 

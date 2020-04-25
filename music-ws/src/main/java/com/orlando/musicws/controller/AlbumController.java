@@ -29,6 +29,7 @@ public class AlbumController {
 	private AlbumService albumService;
 	
 	@PostMapping
+	@CrossOrigin
 	@ApiOperation(value = "Creates an album in the database.")
 	public StandardResponse<Album> save(@RequestBody Album album) {
 		return albumService.save(album);
@@ -42,18 +43,21 @@ public class AlbumController {
 	}
 	
 	@GetMapping("/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Retrieves an album by a given id.")
 	public Album findById(@PathVariable(name = "id") Integer id) {
 		return albumService.findById(id);
 	}
 	
 	@DeleteMapping("/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Deletes an album by a given id.")
 	public StandardResponse<Album> deleteById(@PathVariable(name = "id")  Integer id){
 		return albumService.deleteById(id);
 	}
 	
 	@PutMapping
+	@CrossOrigin
 	@ApiOperation(value = "updates an album by a given id.")
 	public StandardResponse<Album> updateAlbum(@RequestBody Album album){
 		return albumService.updateAlbum(album);

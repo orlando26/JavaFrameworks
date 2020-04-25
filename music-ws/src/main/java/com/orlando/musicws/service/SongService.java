@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.orlando.musicws.entity.Song;
+import com.orlando.musicws.exceptions.EmptyValueException;
 import com.orlando.musicws.repository.SongRepository;
 import com.orlando.musicws.util.StandardResponse;
 import com.orlando.musicws.util.UtilConstants;
@@ -34,11 +35,18 @@ public class SongService {
 	public StandardResponse<Song> save(Song song){
 		StandardResponse<Song> response = new StandardResponse<>();
 		try {
+			
+			if(song.checkEmpty()) throw new EmptyValueException("All fields are required!");
+			
 			Double.parseDouble(song.getTime());
 			
 			response.setEntity(songRepository.save(song));
 			response.setStatus(UtilConstants.SUCCESS_MSG);
 			response.setResponseText("song saved!");
+		}catch(NumberFormatException e) {
+			response.setEntity(null);
+			response.setStatus(UtilConstants.ERROR_MSG);
+			response.setResponseText("Time should be a number!");
 		}catch(Exception e) {
 			response.setEntity(null);
 			response.setStatus(UtilConstants.ERROR_MSG);

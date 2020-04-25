@@ -62,7 +62,8 @@ public class SongController {
 	}
 	
 	@GetMapping("/album/{albumId}")
-	@ApiOperation(value = "Retrieves all songs in database.")
+	@CrossOrigin
+	@ApiOperation(value = "Retrieves all songs in database by a given album.")
 	public List<Song> findByAlbumId(@PathVariable("albumId") Integer albumId){
 		return songService.findAllByAlbumId(albumId);
 	}

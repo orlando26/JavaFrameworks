@@ -2,7 +2,7 @@
   <ion-toolbar color="dark">
     <ion-title>create song</ion-title>
     <ion-buttons slot="end">
-      <ion-button color="danger" routerLink="/songs">
+      <ion-button color="danger" (click)="cancel()">
         <ion-icon name="close-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -10,5 +10,20 @@
 </ion-header>
 
 <ion-content>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input [(ngModel)]="song.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Time</ion-label>
+      <ion-input [(ngModel)]="song.time"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button (click)="saveSong()" expand="block" fill="outline">Save</ion-button>
 
 </ion-content>

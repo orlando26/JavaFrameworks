@@ -32,6 +32,12 @@ public class Album {
 	
 	@Column(name = "Genre")
 	private String genre;
+	
+	public boolean checkEmpty() {
+		if(this.title.equals("") || this.releaseDate.equals("") || this.price.equals("") || this.genre.equals("")) return true;
+		
+		return false;
+	}
 
 	public Integer getId() {
 		return id;
