@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.orlando.musicws.exceptions.EmptyValueException;
 
 @Entity
 @Table(name = "songs")
@@ -28,10 +29,8 @@ public class Song {
 	@Column(name = "Time")
 	private String time;
 	
-	public boolean checkEmpty() {
-		if(this.title.equals("") ||  this.time.equals("")) return true;
-		
-		return false;
+	public void checkEmpty() throws EmptyValueException{
+		if(this.title.equals("") ||  this.time.equals("")) throw new EmptyValueException();
 	}
 
 	public Integer getId() {

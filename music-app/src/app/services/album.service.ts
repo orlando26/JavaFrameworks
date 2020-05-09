@@ -17,11 +17,23 @@ export class AlbumService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get(this.uri); 
-  }  
+    return this.http.get(this.uri);
+  }
 
   saveAlbum(album){
     return this.http.post(this.uri, JSON.stringify(album), this.header);
+  }
+
+  deleteById(albumId) {
+    return this.http.delete(this.uri + '/' + albumId);
+  }
+
+  update(album) {
+    return this.http.put(this.uri, JSON.stringify(album), this.header);
+  }
+
+  findById(albumId) {
+    return this.http.get(this.uri + '/' + albumId);
   }
 
 

@@ -27,4 +27,12 @@ export class SongService {
   deleteSongById(songId){
     return this.http.delete(this.uri + '/' + songId);
   }
+
+  findById(songId) {
+    return this.http.get(this.uri + '/' + songId);
+  }
+
+  update(song) {
+    return this.http.put(this.uri, JSON.stringify(song), this.header);
+  }
 }

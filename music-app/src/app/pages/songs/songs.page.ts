@@ -38,12 +38,12 @@ export class SongsPage implements OnInit {
    );
   }
 
-  openCreateSongsPage(){
+  openCreateSongsPage() {
     this.router.navigateByUrl('/songs/create-song/' + this.albumId);
   }
 
-  updateSong(){
-
+  updateSong(songId) {
+    this.router.navigateByUrl('/songs/edit-song/' + songId);
   }
 
   deleteSong(songId){

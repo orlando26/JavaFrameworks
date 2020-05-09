@@ -15,7 +15,16 @@ const routes: Routes = [
   {
     path: 'create-song/:albumId',
     loadChildren: () => import('./create-song/create-song.module').then( m => m.CreateSongPageModule)
+  },
+  {
+    path: 'edit-song',
+    loadChildren: () => import('./edit-song/edit-song.module').then( m => m.EditSongPageModule)
+  },
+  {
+    path: 'edit-song/:songId',
+    loadChildren: () => import('./edit-song/edit-song.module').then( m => m.EditSongPageModule)
   }
+
 ];
 
 @NgModule({

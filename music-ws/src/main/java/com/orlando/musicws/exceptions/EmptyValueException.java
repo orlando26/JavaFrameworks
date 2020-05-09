@@ -4,8 +4,8 @@ public class EmptyValueException extends Exception{
 
 	private static final long serialVersionUID = 0L;
 	
-	public EmptyValueException(String message) {
-		super(message);
+	public EmptyValueException() {
+		super("All fields are required!");
 	}
 
 }

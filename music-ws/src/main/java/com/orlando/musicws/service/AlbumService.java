@@ -2,13 +2,11 @@ package com.orlando.musicws.service;
 
 import java.util.List;
 
-import javax.persistence.EntityNotFoundException;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.orlando.musicws.entity.Album;
-import com.orlando.musicws.exceptions.EmptyValueException;
 import com.orlando.musicws.repository.AlbumRepository;
 import com.orlando.musicws.util.StandardResponse;
 import com.orlando.musicws.util.UtilConstants;
@@ -23,7 +21,8 @@ public class AlbumService {
 	public StandardResponse<Album> save(Album album) {
 		StandardResponse<Album> response = new StandardResponse<>();
 		try {
-			if(album.checkEmpty()) throw new EmptyValueException("All fields are required!");
+			album.checkEmpty();
+			album.checkPrice();
 			
 			response.setEntity(albumRepository.save(album)); 
 			response.setStatus(UtilConstants.SUCCESS_MSG);
@@ -48,12 +47,18 @@ public class AlbumService {
 	//JPA(Java Persistance API) - Hibernate - Spring jpa
 	public StandardResponse<Album> deleteById(Integer id){
 		StandardResponse<Album> response = new StandardResponse<>();
+		Album album = new Album();
 		
 		try {
-			response.setEntity(findById(id));
+			album = findById(id);
+			response.setEntity(album);
 			albumRepository.deleteById(id);
 			response.setStatus(UtilConstants.SUCCESS_MSG);
 			response.setResponseText("Album with id " + id + "deleted!" );
+		}catch(DataIntegrityViolationException  e) {
+			response.setEntity(null);
+			response.setStatus(UtilConstants.ERROR_MSG);
+			response.setResponseText("Album " + album.getTitle() + " has songs saved!");
 		}catch(Exception e) {
 			response.setEntity(null);
 			response.setStatus(UtilConstants.ERROR_MSG);
@@ -67,6 +72,9 @@ public class AlbumService {
 		StandardResponse<Album> response = new StandardResponse<Album>();
 		
 		try {
+			album.checkPrice();
+			album.checkEmpty();
+			
 			albumRepository.getOne(album.getId());
 			response.setEntity(albumRepository.save(album));
 			response.setStatus(UtilConstants.SUCCESS_MSG);
@@ -74,7 +82,7 @@ public class AlbumService {
 		}catch(Exception e) {
 			response.setEntity(null);
 			response.setStatus(UtilConstants.ERROR_MSG);
-			response.setResponseText("id " + album.getId() + " not found");
+			response.setResponseText(e.getMessage());
 		}
 		
 		return response;

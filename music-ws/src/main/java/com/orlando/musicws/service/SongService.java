@@ -36,7 +36,7 @@ public class SongService {
 		StandardResponse<Song> response = new StandardResponse<>();
 		try {
 			
-			if(song.checkEmpty()) throw new EmptyValueException("All fields are required!");
+			song.checkEmpty();
 			
 			Double.parseDouble(song.getTime());
 			
@@ -65,6 +65,8 @@ public class SongService {
 		StandardResponse<Song> response = new StandardResponse<>();
 
 		try {
+			song.checkEmpty();
+			
 			songRepository.getOne(song.getId());
 			response.setEntity(songRepository.save(song));
 			response.setStatus("SUCCESS");

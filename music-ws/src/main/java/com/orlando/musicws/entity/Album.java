@@ -1,7 +1,5 @@
 package com.orlando.musicws.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,12 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.orlando.musicws.exceptions.EmptyValueException;
+import com.orlando.musicws.exceptions.PriceFormatException;
 
 @Entity
 @Table(name = "albums")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Album {
-
+	// AWS - GCP(Google cloud platform) - Azure
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "Id")
@@ -33,10 +33,16 @@ public class Album {
 	@Column(name = "Genre")
 	private String genre;
 	
-	public boolean checkEmpty() {
-		if(this.title.equals("") || this.releaseDate.equals("") || this.price.equals("") || this.genre.equals("")) return true;
-		
-		return false;
+	public void checkEmpty() throws EmptyValueException{
+		if(this.title.equals("") || this.releaseDate.equals("") || this.price.equals("") || this.genre.equals("")) throw new EmptyValueException();
+	}
+	
+	public void checkPrice() throws PriceFormatException{
+		try {
+			Double.parseDouble(price);
+		}catch(NumberFormatException e) {
+			throw new PriceFormatException();
+		}
 	}
 
 	public Integer getId() {
