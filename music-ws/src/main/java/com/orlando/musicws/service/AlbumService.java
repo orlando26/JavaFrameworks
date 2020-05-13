@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.orlando.musicws.entity.Album;
 import com.orlando.musicws.repository.AlbumRepository;
@@ -16,6 +15,7 @@ public class AlbumService {
 	
 	@Autowired
 	private AlbumRepository albumRepository;
+	
 	
 	public List<Album> findAll(){
 		return albumRepository.findAll();

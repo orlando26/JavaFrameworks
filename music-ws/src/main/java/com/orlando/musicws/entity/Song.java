@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.orlando.musicws.exceptions.EmptyValuesException;
+
 @Entity(name = "songs")
 public class Song {
 	
@@ -22,6 +24,10 @@ public class Song {
 	
 	@Column(name = "Time")
 	private String time;
+	
+	public void checkEmpty() throws EmptyValuesException{
+		if(this.albumId.equals(null) || this.title.equals("") ||  this.time.equals("")) throw new EmptyValuesException();
+	}
 
 	public Integer getId() {
 		return id;
