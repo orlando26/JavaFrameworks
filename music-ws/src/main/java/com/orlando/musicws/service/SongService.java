@@ -66,11 +66,12 @@ public class SongService {
 
 		try {
 			song.checkEmpty();
+			song.checkTime();
 			
 			songRepository.getOne(song.getId());
 			response.setEntity(songRepository.save(song));
 			response.setStatus("SUCCESS");
-			response.setResponseText("song with id " + song.getId() + " update!d");
+			response.setResponseText("song with id " + song.getId() + " update!");
 		}catch (Exception e) {
 			response.setEntity(song);
 			response.setStatus("ERROR");

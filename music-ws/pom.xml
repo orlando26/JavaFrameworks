@@ -15,6 +15,7 @@
 	<description>web services for music app</description>
 
 	<properties>
+		<maven.test.skip>true</maven.test.skip> 
 		<java.version>1.8</java.version>
 	</properties>
 

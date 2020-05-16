@@ -9,6 +9,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.orlando.musicws.exceptions.EmptyValueException;
+import com.orlando.musicws.exceptions.TimeFormatException;
 
 @Entity
 @Table(name = "songs")
@@ -31,6 +32,14 @@ public class Song {
 	
 	public void checkEmpty() throws EmptyValueException{
 		if(this.title.equals("") ||  this.time.equals("")) throw new EmptyValueException();
+	}
+	
+	public void checkTime() throws TimeFormatException {
+		try {
+			Double.parseDouble(time);
+		}catch (NumberFormatException e) {
+			throw new TimeFormatException();
+		}
 	}
 
 	public Integer getId() {

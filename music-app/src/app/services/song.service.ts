@@ -6,13 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class SongService {
 
-  //private uri = 'http://localhost:8080/api/v1/song';
-  private uri = 'http://ec2-3-94-109-229.compute-1.amazonaws.com:8080/api/v1/song';
+  private uri = 'http://localhost:8080/api/v1/song';
+
+  //private uri = 'http://ec2-3-94-109-229.compute-1.amazonaws.com:8080/api/v1/song';
 
   header = {
     headers: {
       'Content-Type': 'application/json'
-    }
+    } 
   };
 
   constructor(private http: HttpClient) { }

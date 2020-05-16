@@ -6,8 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlbumService {
 
-  //private uri = 'http://localhost:8080/api/v1/album';
-  private uri = 'http://ec2-3-94-109-229.compute-1.amazonaws.com:8080/api/v1/album';
+  private uri = 'http://localhost:8080/api/v1/album';
+
+  //private uri = 'http://ec2-3-94-109-229.compute-1.amazonaws.com:8080/api/v1/album';
+
 
   header = {
     headers: {
