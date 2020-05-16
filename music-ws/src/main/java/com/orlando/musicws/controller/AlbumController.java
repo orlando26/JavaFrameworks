@@ -16,34 +16,43 @@ import com.orlando.musicws.entity.Album;
 import com.orlando.musicws.service.AlbumService;
 import com.orlando.musicws.util.StandardResponse;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+// spring security, jsf(web interfaces mvc)
 @RestController
 @RequestMapping("/api/v1/album")
+@Api(description = "API Info for album service", tags = "Album API Controller")
 public class AlbumController {
 	
 	@Autowired
 	private AlbumService albumService;
 	
 	@GetMapping
+	@ApiOperation(value = "Retrieves all albums in database")
 	public List<Album> findAll(){
 		return albumService.findAll();
 	}
-	
+	// Gradle & maven
 	@PostMapping  // - Request - Response
+	@ApiOperation(value = "Creates an album in database")
 	public StandardResponse<Album> save(@RequestBody Album album){ // @RequestBody para hacer map del json con el objeto en java
 		return albumService.save(album);
 	}
 	
 	@GetMapping("/id/{id}")
+	@ApiOperation(value = "Retrieves an album by a given id")
 	public Album findById(@PathVariable(name = "id") Integer id) {
 		return albumService.findById(id);
 	}
 	
 	@DeleteMapping("/id/{id}")
+	@ApiOperation(value = "Deletes an album by a given id")
 	public StandardResponse<Album> deleteById(@PathVariable(name = "id") Integer id){
 		return albumService.deleteById(id);
 	}
 	
 	@PutMapping
+	@ApiOperation(value = "Updates an existing album in database")
 	public StandardResponse<Album> update(@RequestBody Album album){
 		return albumService.update(album);
 	}

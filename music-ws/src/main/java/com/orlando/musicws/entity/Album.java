@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.orlando.musicws.exceptions.EmptyValuesException;
+import com.orlando.musicws.exceptions.NotPersistedObjectException;
 
 @Entity(name = "albums")
 public class Album {// JDBC - Hibernate - Spring JPA
@@ -31,6 +32,10 @@ public class Album {// JDBC - Hibernate - Spring JPA
 	
 	public void checkEmpty() throws EmptyValuesException { // throws - avisar al compilador que la logica puede arrojar una excepcion pero no se valida aqui
 		if( title.equals("") || releaseDate.equals("") || price.equals("") || genre.equals("") ) throw new EmptyValuesException("Porfavor llena todos los campos!"); // throw - arroja una excepcion
+	}
+	
+	public static void checkObjectIsNotNull(Album album) throws NotPersistedObjectException{
+		if (album == null) throw new NotPersistedObjectException();
 	}
 	
 

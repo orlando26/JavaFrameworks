@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.orlando.musicws.exceptions.EmptyValuesException;
+import com.orlando.musicws.exceptions.NotPersistedObjectException;
 
 @Entity(name = "songs")
 public class Song {
@@ -27,6 +28,10 @@ public class Song {
 	
 	public void checkEmpty() throws EmptyValuesException{
 		if(this.albumId.equals(null) || this.title.equals("") ||  this.time.equals("")) throw new EmptyValuesException();
+	}
+	
+	public static void checkObjectIsNotNull(Song song) throws NotPersistedObjectException{
+		if (song == null) throw new NotPersistedObjectException();
 	}
 
 	public Integer getId() {

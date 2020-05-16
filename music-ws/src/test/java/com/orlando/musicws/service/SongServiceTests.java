@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -35,6 +36,14 @@ public class SongServiceTests {
 		List<Song> songs = songService.findAll();
 		assertNotNull(songs);
 	}
+	
+	@Test
+	public void findAllByAlbumIdTest() {
+		List<Song> songs = songService.findAllByAlbumId(1);
+		
+		songs.forEach(System.out::println);
+	}
+	
 	
 	
 	
