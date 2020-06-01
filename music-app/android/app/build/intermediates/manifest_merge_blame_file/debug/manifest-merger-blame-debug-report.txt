@@ -1,0 +1,304 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="io.ionic.starter"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml
+10
+11    <!-- Permissions -->
+12
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:48:5-67
+13-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:48:22-64
+14    <!-- Camera, Photos, input file -->
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:50:5-79
+15-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:50:22-77
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:51:5-81
+16-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:51:22-78
+17    <!-- Geolocation API -->
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:53:5-81
+18-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:53:22-78
+19    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+19-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:54:5-79
+19-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:54:22-76
+20
+21    <uses-feature android:name="android.hardware.location.gps" />
+21-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:55:5-66
+21-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:55:19-63
+22    <!-- Network API -->
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:57:5-79
+23-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:57:22-76
+24    <!-- Navigator.getUserMedia -->
+25    <!-- Video -->
+26    <uses-permission android:name="android.permission.CAMERA" />
+26-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:60:5-65
+26-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:60:22-62
+27    <!-- Audio -->
+28    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+28-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:62:5-71
+28-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:62:22-68
+29    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+29-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:63:5-79
+29-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:63:22-77
+30
+31    <uses-feature
+31-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-13:36
+32        android:name="android.hardware.camera"
+32-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:9-47
+33        android:required="false" />
+33-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:9-33
+34
+35    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+35-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:24:5-68
+35-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:24:22-65
+36    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+36-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:26:5-82
+36-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:26:22-79
+37
+38    <application
+38-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:5:5-44:19
+39        android:allowBackup="true"
+39-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:6:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\cf23515831a30cf8e0e5ff774beb1451\core-1.2.0\AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+42        android:icon="@mipmap/ic_launcher"
+42-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:7:9-43
+43        android:label="@string/app_name"
+43-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:8:9-41
+44        android:roundIcon="@mipmap/ic_launcher_round"
+44-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:9:9-54
+45        android:supportsRtl="true"
+45-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:10:9-35
+46        android:testOnly="true"
+47        android:theme="@style/AppTheme"
+47-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:12:9-40
+48        android:usesCleartextTraffic="true" >
+48-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:11:9-44
+49        <activity
+49-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:14:9-33:20
+50            android:name="io.ionic.starter.MainActivity"
+50-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:16:13-57
+51            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
+51-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:15:13-129
+52            android:label="@string/title_activity_main"
+52-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:17:13-56
+53            android:launchMode="singleTask"
+53-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:19:13-44
+54            android:theme="@style/AppTheme.NoActionBarLaunch" >
+54-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:18:13-62
+55            <intent-filter>
+55-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:21:13-24:29
+56                <action android:name="android.intent.action.MAIN" />
+56-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:22:17-69
+56-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:22:25-66
+57
+58                <category android:name="android.intent.category.LAUNCHER" />
+58-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:23:17-77
+58-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:23:27-74
+59            </intent-filter>
+60            <intent-filter>
+60-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:26:13-31:29
+61                <action android:name="android.intent.action.VIEW" />
+61-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:27:17-69
+61-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:27:25-66
+62
+63                <category android:name="android.intent.category.DEFAULT" />
+63-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:28:17-76
+63-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:28:27-73
+64                <category android:name="android.intent.category.BROWSABLE" />
+64-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:29:17-78
+64-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:29:27-75
+65
+66                <data android:scheme="@string/custom_url_scheme" />
+66-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:30:17-68
+66-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:30:23-65
+67            </intent-filter>
+68        </activity>
+69
+70        <provider
+71            android:name="androidx.core.content.FileProvider"
+71-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:36:13-62
+72            android:authorities="io.ionic.starter.fileprovider"
+72-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:37:13-64
+73            android:exported="false"
+73-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:38:13-37
+74            android:grantUriPermissions="true" >
+74-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:39:13-47
+75            <meta-data
+75-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:40:13-42:64
+76                android:name="android.support.FILE_PROVIDER_PATHS"
+76-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:41:17-67
+77                android:resource="@xml/file_paths" />
+77-->C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\android\app\src\main\AndroidManifest.xml:42:17-51
+78        </provider>
+79
+80        <service
+80-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:9-18:40
+81            android:name="com.getcapacitor.plugin.background.BackgroundTaskService"
+81-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:17:13-84
+82            android:exported="false" />
+82-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:18:13-37
+83
+84        <receiver android:name="com.getcapacitor.plugin.notification.TimedNotificationPublisher" />
+84-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:9-100
+84-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:20:19-97
+85        <receiver android:name="com.getcapacitor.plugin.notification.NotificationDismissReceiver" />
+85-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:9-101
+85-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:21:19-98
+86
+87        <meta-data
+87-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:23:9-25:37
+88            android:name="firebase_messaging_auto_init_enabled"
+88-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:24:13-64
+89            android:value="false" />
+89-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:25:13-34
+90
+91        <service
+91-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:27:9-33:19
+92            android:name="com.getcapacitor.CapacitorFirebaseMessagingService"
+92-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:28:13-78
+93            android:stopWithTask="false" >
+93-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:29:13-41
+94            <intent-filter>
+94-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:13-32:29
+95                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+95-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:17-78
+95-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:25-75
+96            </intent-filter>
+97        </service>
+98        <!--
+99             FirebaseMessagingService performs security checks at runtime,
+100             but set to not exported to explicitly avoid allowing another app to call it.
+101        -->
+102        <service
+102-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:28:9-34:19
+103            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+103-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:29:13-82
+104            android:exported="false" >
+104-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:30:13-37
+105            <intent-filter android:priority="-500" >
+105-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:30:13-32:29
+106                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+106-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:17-78
+106-->[:capacitor-android] C:\Users\orlando loza\Documents\GitHub\JavaFrameworks\music-app\node_modules\@capacitor\android\capacitor\build\intermediates\library_manifest\debug\AndroidManifest.xml:31:25-75
+107            </intent-filter>
+108        </service>
+109        <service
+109-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:35:9-41:19
+110            android:name="com.google.firebase.components.ComponentDiscoveryService"
+110-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:36:13-84
+111            android:directBootAware="true"
+111-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:34:13-43
+112            android:exported="false" >
+112-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:37:13-37
+113            <meta-data
+113-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:38:13-40:85
+114                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+114-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:39:17-119
+115                android:value="com.google.firebase.components.ComponentRegistrar" />
+115-->[com.google.firebase:firebase-messaging:20.1.2] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\9fbada88fa325291a82eb809c2064dc7\jetified-firebase-messaging-20.1.2\AndroidManifest.xml:40:17-82
+116            <meta-data
+116-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\c9fdb49c77a6c560ace392ea2d5303c1\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:28:13-30:85
+117                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+117-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\c9fdb49c77a6c560ace392ea2d5303c1\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:29:17-115
+118                android:value="com.google.firebase.components.ComponentRegistrar" />
+118-->[com.google.firebase:firebase-datatransport:17.0.3] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\c9fdb49c77a6c560ace392ea2d5303c1\jetified-firebase-datatransport-17.0.3\AndroidManifest.xml:30:17-82
+119            <meta-data
+119-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:32:13-34:85
+120                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+120-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:33:17-96
+121                android:value="com.google.firebase.components.ComponentRegistrar" />
+121-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:34:17-82
+122            <meta-data
+122-->[com.google.firebase:firebase-installations:16.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1e98b102015e39078d965ca60768118d\jetified-firebase-installations-16.0.0\AndroidManifest.xml:17:13-19:85
+123                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+123-->[com.google.firebase:firebase-installations:16.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1e98b102015e39078d965ca60768118d\jetified-firebase-installations-16.0.0\AndroidManifest.xml:18:17-127
+124                android:value="com.google.firebase.components.ComponentRegistrar" />
+124-->[com.google.firebase:firebase-installations:16.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1e98b102015e39078d965ca60768118d\jetified-firebase-installations-16.0.0\AndroidManifest.xml:19:17-82
+125        </service>
+126
+127        <receiver
+127-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:37:9-44:20
+128            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+128-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:38:13-78
+129            android:exported="true"
+129-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:39:13-36
+130            android:permission="com.google.android.c2dm.permission.SEND" >
+130-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:40:13-73
+131            <intent-filter>
+131-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:41:13-43:29
+132                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+132-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:42:17-81
+132-->[com.google.firebase:firebase-iid:20.1.1] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\65f174b01524df0d4bd637d7360a2e28\jetified-firebase-iid-20.1.1\AndroidManifest.xml:42:25-78
+133            </intent-filter>
+134        </receiver>
+135
+136        <provider
+136-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:26:9-30:39
+137            android:name="com.google.firebase.provider.FirebaseInitProvider"
+137-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:27:13-77
+138            android:authorities="io.ionic.starter.firebaseinitprovider"
+138-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:28:13-72
+139            android:exported="false"
+139-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:29:13-37
+140            android:initOrder="100" />
+140-->[com.google.firebase:firebase-common:19.3.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\1b23a58bb1c539c2a19df1b0920c32b5\jetified-firebase-common-19.3.0\AndroidManifest.xml:30:13-36
+141
+142        <activity
+142-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\38b6c4b545e39be84f8fef63d737cf6b\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+143            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+143-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\38b6c4b545e39be84f8fef63d737cf6b\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+144            android:exported="false"
+144-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\38b6c4b545e39be84f8fef63d737cf6b\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+145            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+145-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\38b6c4b545e39be84f8fef63d737cf6b\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+146
+147        <meta-data
+147-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+148            android:name="com.google.android.gms.version"
+148-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+149            android:value="@integer/google_play_services_version" />
+149-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\f720b24cc490c109d50c0a0a1e6bf186\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+150
+151        <service
+151-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:29:9-35:19
+152            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+152-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:30:13-103
+153            android:exported="false" >
+153-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:31:13-37
+154            <meta-data
+154-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:32:13-34:39
+155                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+155-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:33:17-94
+156                android:value="cct" />
+156-->[com.google.android.datatransport:transport-backend-cct:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\6b92bf4ad40bcdc58a60097256bb2331\jetified-transport-backend-cct-2.2.0\AndroidManifest.xml:34:17-36
+157        </service>
+158        <service
+158-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:26:9-30:19
+159            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+159-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:27:13-117
+160            android:exported="false"
+160-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:28:13-37
+161            android:permission="android.permission.BIND_JOB_SERVICE" >
+161-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:29:13-69
+162        </service>
+163
+164        <receiver
+164-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:32:9-34:40
+165            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+165-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:33:13-132
+166            android:exported="false" />
+166-->[com.google.android.datatransport:transport-runtime:2.2.0] C:\Users\orlando loza\.gradle\caches\transforms-2\files-2.1\711d09d774dd8393d1b2cda417cd0cc2\jetified-transport-runtime-2.2.0\AndroidManifest.xml:34:13-37
+167    </application>
+168
+169</manifest>

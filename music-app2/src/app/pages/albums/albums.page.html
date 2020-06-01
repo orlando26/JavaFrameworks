@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/">
+        <ion-icon name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>albums</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+
+  <ion-item-sliding *ngFor="let album of albums">
+
+    <ion-item (click)="songsPage(album.id)"   detail>
+      <ion-label>{{album.title}}</ion-label>
+    </ion-item>
+
+    <ion-item-options side="start">
+      <ion-item-option (click)="update(album.id)" color="primary">
+        <ion-icon name="pencil-outline"></ion-icon>
+        Editar
+      </ion-item-option>
+      <ion-item-option (click)="delete(album.id)" color="danger">
+        <ion-icon name="trash-outline"></ion-icon>
+        Borrar
+      </ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+    
+
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/albums/create-album" color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

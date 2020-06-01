@@ -9,6 +9,7 @@ import com.orlando.musicws.entity.Album;
 import com.orlando.musicws.repository.AlbumRepository;
 import com.orlando.musicws.util.CommonConstants;
 import com.orlando.musicws.util.StandardResponse;
+import com.orlando.musicws.util.Validations;
 
 @Service
 public class AlbumService {
@@ -24,8 +25,11 @@ public class AlbumService {
 	public StandardResponse<Album> save(Album album) {
 		StandardResponse<Album> response = new StandardResponse<>();
 		try {
-			Double.parseDouble(album.getPrice()); // NumberFormatException
 			album.checkEmpty();
+			Double.parseDouble(album.getPrice()); // NumberFormatException
+			Album albumCheck = albumRepository.findByTitle(album.getTitle());
+			Validations.checkUniqueAlbumTitle(albumCheck);
+			
 			
 			response.setEntity(albumRepository.save(album));
 			response.setStatus(CommonConstants.SUCCESS_MSG);
@@ -68,11 +72,17 @@ public class AlbumService {
 		StandardResponse<Album> response = new StandardResponse<>();
 		
 		try {
-			albumRepository.getOne(album.getId());
+			album.checkEmpty();
+			Double.parseDouble(album.getPrice());
+			albumRepository.getOne(album.getId()); 
 			
 			response.setEntity(albumRepository.save(album));
 			response.setStatus(CommonConstants.SUCCESS_MSG);
 			response.setResponseText("Album with id " + album.getId() + " updated!");
+		}catch(NumberFormatException e) {
+			response.setEntity(null);
+			response.setStatus(CommonConstants.ERROR_MSG);
+			response.setResponseText("Price should be a number!");
 		}catch(Exception e) {
 			response.setEntity(null);
 			response.setStatus(CommonConstants.ERROR_MSG);

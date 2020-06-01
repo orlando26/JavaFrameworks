@@ -6,10 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.orlando.musicws.exceptions.EmptyValuesException;
 import com.orlando.musicws.exceptions.NotPersistedObjectException;
 
 @Entity(name = "albums")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Album {// JDBC - Hibernate - Spring JPA
 	// DAO(Data Acces Object) - CRUD - Repository 
 	@Id

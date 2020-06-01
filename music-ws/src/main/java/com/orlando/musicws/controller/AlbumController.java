@@ -3,6 +3,7 @@ package com.orlando.musicws.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,30 +29,35 @@ public class AlbumController {
 	private AlbumService albumService;
 	
 	@GetMapping
+	@CrossOrigin // permite CORS policy(bloquear peticiones de servidores/puertos externos) 
 	@ApiOperation(value = "Retrieves all albums in database")
 	public List<Album> findAll(){
 		return albumService.findAll();
 	}
 	// Gradle & maven
 	@PostMapping  // - Request - Response
+	@CrossOrigin
 	@ApiOperation(value = "Creates an album in database")
 	public StandardResponse<Album> save(@RequestBody Album album){ // @RequestBody para hacer map del json con el objeto en java
 		return albumService.save(album);
 	}
 	
 	@GetMapping("/id/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Retrieves an album by a given id")
 	public Album findById(@PathVariable(name = "id") Integer id) {
 		return albumService.findById(id);
 	}
 	
 	@DeleteMapping("/id/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Deletes an album by a given id")
 	public StandardResponse<Album> deleteById(@PathVariable(name = "id") Integer id){
 		return albumService.deleteById(id);
 	}
 	
 	@PutMapping
+	@CrossOrigin
 	@ApiOperation(value = "Updates an existing album in database")
 	public StandardResponse<Album> update(@RequestBody Album album){
 		return albumService.update(album);

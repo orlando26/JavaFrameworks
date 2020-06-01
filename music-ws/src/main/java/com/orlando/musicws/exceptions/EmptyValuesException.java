@@ -7,7 +7,7 @@ public class EmptyValuesException extends Exception{
 	}
 	
 	public EmptyValuesException() {
-		super("All fields are required!");
+		super("Todos los campos son requeridos!");
 	}
 	
 }

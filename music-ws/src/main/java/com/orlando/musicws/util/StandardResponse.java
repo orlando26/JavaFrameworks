@@ -3,11 +3,11 @@ package com.orlando.musicws.util;
 
 public class StandardResponse<T> {
 	
-	public String status;
+	private String status;
 	
-	public String responseText;
+	private String responseText;
 	
-	public T entity;
+	private T entity;
 
 	public String getStatus() {
 		return status;

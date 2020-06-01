@@ -17,4 +17,8 @@ public interface AlbumRepository extends JpaRepository<Album, Integer>{
 	// GET_TOTAL_SONGS_IN_ALBUM
 	@Query(value = "call GET_TOTAL_SONGS_IN_ALBUM(:albumId)", nativeQuery = true)
 	public Integer totalSongs(@Param("albumId") Integer albumId);
+	
+	public Album findByTitle(String title);
+	
+	//public List<Album> findByTitle(String title);
 }
