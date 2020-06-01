@@ -59,6 +59,23 @@
 			<artifactId>genson</artifactId>
 			<version>0.99</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-core -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-core</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.apache.cxf/cxf-rt-rs-client -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>3.3.6</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
