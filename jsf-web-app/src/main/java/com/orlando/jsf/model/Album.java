@@ -1,6 +1,13 @@
 package com.orlando.jsf.model;
 
-public class Album {
+import java.io.Serializable;
+
+public class Album implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Integer id;
 
 	private String title;

@@ -24,8 +24,29 @@
 
 		<h:form>
 
-			<h:commandButton value="Print values"
-				action="#{bean.print}"></h:commandButton>
+			<p:dataTable var="album" value="#{bean.albums}">
+				<p:column headerText="Id">
+					<h:outputText value="#{album.id}" />
+				</p:column>
+
+				<p:column headerText="Title">
+					<h:outputText value="#{album.title}" />
+				</p:column>
+
+				<p:column headerText="Date">
+					<h:outputText value="#{album.releaseDate}" />
+				</p:column>
+
+				<p:column headerText="Price">
+					<h:outputText value="#{album.price}" />
+				</p:column>
+				
+				<p:column headerText="Genre">
+					<h:outputText value="#{album.genre}" />
+				</p:column>
+			</p:dataTable>
+
+			<h:commandButton value="Print values" action="#{bean.print}"></h:commandButton>
 		</h:form>
 	</b:container>
 
