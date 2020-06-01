@@ -61,7 +61,7 @@ public class Album {// JDBC - Hibernate - Spring JPA
 		return releaseDate;
 	}
 
-	public void setReleaseDate(String releaseDate) {
+	public void setReleaseDate(String releaseDate) { 
 		this.releaseDate = releaseDate;
 	}
 
