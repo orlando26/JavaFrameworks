@@ -15,40 +15,40 @@
 	<title>JSF 2.0 Greeting</title>
 </h:head>
 <h:body>
+	<b:jumbotron>
+		<h3 class="text-center">
+			<h:outputText value="#{msg.welcome_msg}" />
+		</h3>
+	</b:jumbotron>
+
 	<b:container>
-		<b:jumbotron>
-			<h3 class="text-center">
-				<h:outputText value="#{msg.welcome_msg}" />
-			</h3>
-		</b:jumbotron>
-
 		<h:form>
+			<b:commandButton actionListener="#{bean.redirectUpdate}" look="danger" iconAwesome="plus" value="Add" ></b:commandButton>
+			<b:dataTable style="width: 100%" csv="true" pdf="true" var="album"
+				value="#{bean.albums}">
+				<b:dataTableColumn label="Id" value="#{album.id}">
+				</b:dataTableColumn>
 
-			<p:dataTable var="album" value="#{bean.albums}">
-				<p:column headerText="Id">
-					<h:outputText value="#{album.id}" />
-				</p:column>
-
-				<p:column headerText="Title">
+				<b:dataTableColumn label="Title">
 					<h:outputText value="#{album.title}" />
-				</p:column>
+				</b:dataTableColumn>
 
-				<p:column headerText="Date">
+				<b:dataTableColumn label="Date">
 					<h:outputText value="#{album.releaseDate}" />
-				</p:column>
+				</b:dataTableColumn>
 
-				<p:column headerText="Price">
+				<b:dataTableColumn label="Price">
 					<h:outputText value="#{album.price}" />
-				</p:column>
-				
-				<p:column headerText="Genre">
-					<h:outputText value="#{album.genre}" />
-				</p:column>
-			</p:dataTable>
+				</b:dataTableColumn>
 
-			<h:commandButton value="Print values" action="#{bean.print}"></h:commandButton>
+				<b:dataTableColumn label="Genre">
+					<h:outputText value="#{album.genre}" />
+				</b:dataTableColumn>
+			</b:dataTable>
+
 		</h:form>
 	</b:container>
+
 
 </h:body>
 </html>

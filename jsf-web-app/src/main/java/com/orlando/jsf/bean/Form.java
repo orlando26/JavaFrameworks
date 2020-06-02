@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.io.Serializable;
 
 import javax.el.ELContext;
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.print.attribute.standard.Severity;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -76,7 +78,22 @@ public class Form implements Serializable{
 		context.responseComplete();
 		HttpServletResponse response = getResponse();
 		try{
-			response.sendRedirect(response.encodeRedirectURL(getRequest().getContextPath() + url));
+			response.sendRedirect(response.encodeRedirectURL(getRequest().getContextPath() + url + ".xhtml"));
+		}catch(IOException e){
+			throw new RuntimeException(e);
+		}	
+	}
+	
+	public void redirectHome(){
+		String url = "/index";
+		assert url != null;
+		assert url.startsWith("/");
+		
+		FacesContext context = getFacesContext();
+		context.responseComplete();
+		HttpServletResponse response = getResponse();
+		try{
+			response.sendRedirect(response.encodeRedirectURL(getRequest().getContextPath() + url + ".xhtml"));
 		}catch(IOException e){
 			throw new RuntimeException(e);
 		}	
@@ -85,6 +102,10 @@ public class Form implements Serializable{
 	protected Object getSessionBean(String bean){
 		Object object = getFacesContext().getExternalContext().getSessionMap().get(bean);
 		return object;
+	}
+	
+	protected void message(String status, String message) {
+		getFacesContext().addMessage(null, new FacesMessage(status, message));
 	}
 
 }

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="primary">
+      <ion-button routerLink="/albums">
+        <ion-icon color="danger" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>create song</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating">Title</ion-label>
+          <ion-input [(ngModel)]="song.title"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label position="floating">Time</ion-label>
+          <ion-input [(ngModel)]="song.time"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button (click)="save()" expand="full"> Guardar </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

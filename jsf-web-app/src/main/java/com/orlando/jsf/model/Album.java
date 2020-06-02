@@ -17,7 +17,18 @@ public class Album implements Serializable{
 	private String price;
 
 	private String genre;
+	
+	public Album() {
+		
+	}
 
+	public Album(String title, String releaseDate, String price, String genre) {
+		super();
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.price = price;
+		this.genre = genre;
+	}
 
 	public Integer getId() {
 		return id;

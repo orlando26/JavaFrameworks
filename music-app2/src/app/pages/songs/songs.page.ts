@@ -1,5 +1,6 @@
+import { ToastService } from './../../services/toast.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SongService } from 'src/app/services/song.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class SongsPage implements OnInit {
 
   songs: Song[];
 
+  response: any = {
+    entity: {},
+    status: '',
+    responseText: ''
+  }
+
   // Router - para movernos entre pantallas y las rutas
   // ActivatedRoute - informacion de las rutas y pantallas
-  constructor(private route: ActivatedRoute, private songApi: SongService) { }
+  constructor(private route: ActivatedRoute, private songApi: SongService, private toastService: ToastService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -32,11 +39,26 @@ export class SongsPage implements OnInit {
 
   }
   update(id){
-    console.log(id);
+    this.router.navigateByUrl('/songs/update-song/' + id);
   }
 
   delete(id){
-    console.log(id);
+    this.songApi.deleteSongById(id).subscribe(
+      res => {
+        this.response = res;
+        if(this.response.status === 'SUCCESS'){
+          this.toastService.successToast(this.response.responseText);
+          this.ionViewWillEnter();
+        }else{
+          this.toastService.errorToast(this.response.responseText);
+        }
+
+      }
+    );
+  }
+
+  createSong(){
+    this.router.navigateByUrl('/songs/create-song/' + this.albumId);
   }
 
 }

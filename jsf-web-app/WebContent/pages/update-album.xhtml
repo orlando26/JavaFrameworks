@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<f:loadBundle basename="messages" var="msg" />
+<c:set var="bean" value="#{viewContext.updateAlbumBean}"></c:set>
+
+<h:head>
+	<title>JSF 2.0 Greeting</title>
+</h:head>
+<h:body>
+	<b:jumbotron>
+		<h3 class="text-center">
+			<h:outputText value="#{msg.update_page}" />
+		</h3>
+	</b:jumbotron>
+
+	<b:container>
+		<h:form>
+			<p:growl id="growl" showDetail="true"  life="5000" />  
+
+			<div>
+				<b:inputText id="title" value="#{bean.title}" label="Title" />
+
+				<b:dateTimePicker format="MM/DD/YYYY" value="#{bean.releaseDate}"
+					locale="en" label="Date" />
+
+				<b:inputText id="price" label="Price" value="#{bean.price}" />
+
+				<b:inputText id="genre" label="Genre" value="#{bean.genre}" />
+
+				<b:commandButton size="lg" value="Save" action="#{bean.save}"></b:commandButton>
+				<b:commandButton size="lg" value="Cancel" action="#{bean.cancel}"></b:commandButton>
+			</div>
+
+		</h:form>
+	</b:container>
+
+
+</h:body>
+</html>

@@ -30,12 +30,14 @@ public class SongController {
 	private SongService songService;
 	
 	@GetMapping
+	@CrossOrigin
 	@ApiOperation(value = "Retrieves all songs in database")
 	public List<Song> findByAll(){
 		return songService.findAll();
 	}
 	
 	@PostMapping
+	@CrossOrigin
 	@ApiOperation(value = "Creates an album in database")
 	public StandardResponse<Song> save(@RequestBody Song song){
 		return songService.save(song);
@@ -49,18 +51,21 @@ public class SongController {
 	}
 	
 	@GetMapping("/songId/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "Retrieves a song by a given id")
 	public Song findById(@PathVariable(name = "id") Integer id) {
 		return songService.findById(id);
 	}
 	
 	@DeleteMapping("/songId/{id}")
+	@CrossOrigin
 	@ApiOperation(value = "deletes a song by a given id")
 	public StandardResponse<Song> deleteById(@PathVariable(name = "id") Integer id){
 		return songService.deleteById(id);
 	}
 	
 	@PutMapping
+	@CrossOrigin
 	@ApiOperation(value = "Updates an existing song in database")
 	public StandardResponse<Song> update(@RequestBody Song song){
 		return songService.update(song);
